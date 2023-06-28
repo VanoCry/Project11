@@ -407,6 +407,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(1397, 495);
 			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick);
 			// 
 			// Column_number
 			// 
@@ -889,27 +890,11 @@ private: System::Void MyForm_FormClosed(System::Object^ sender, System::Windows:
 	Application::Exit();
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	groupBox_add->Text = "Добавить товар";
-	button_add->Visible = true;
-	button_redact->Visible = false;
-	label_podskazka->Text = "Подсказка";
-	label_podskazka_text->Text = "Вы попали в поле добавления строки.";
-	numericUpDown_numstrok->Visible = false;
-	label_numstrok->Visible = false;
+	this->groupBox_add->Visible = true;
+	this->groupBox_redact->Visible = false;
 }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (dataGridView1->Rows->Count != 0) {
-		groupBox_add->Text = "Редактировать товар";
-		button_add->Visible = false;
-		button_redact->Visible = true;
-		label_podskazka->Text = "Подсказка";
-		label_podskazka_text->Text = "Вы попали в поле редактирования строки.\nCначала выберите номер строки!";
-		numericUpDown_numstrok->Visible = true;
-		label_numstrok->Visible = true;
-		numericUpDown_numstrok->Maximum = dataGridView1->Rows->Count;
-		numericUpDown_numstrok->Value = dataGridView1->Rows->Count;
-	}
-	else label_podskazka_text->Text = "Таблица пуста.\nРедактировать нечего.";
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->groupBox_add->Visible = false;
 }
 
 private: System::Void сменитьФонToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -979,33 +964,9 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 	label_podskazka->Text = "Наименование товара";
 	label_podskazka_text->Text = "";
 }
-
-private: System::Void numericUpDown_numstrok_Enter(System::Object^ sender, System::EventArgs^ e) {
-	label_podskazka->Text = "Подсказка";
-	label_podskazka_text->Text = "Сначала выберите номер строки!";
-}
-
-private: System::Void numericUpDown_numstrok_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (numericUpDown_numstrok->Value != 0) {
-		textBox_add_name->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[1]->Value);
-		numericUpDown_add_cond->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[2]->Value);
-		dateTimePicker_add->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[5]->Value);
-		maskedTextBox_add_passport->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[6]->Value);
-		numericUpDown_add_srok->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[7]->Value);
-		domainUpDown1->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[4]->Value);
-		numericUpDown_add_cena->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[3]->Value);
-	}
-}
-private: System::Void button_redact_Click(System::Object^ sender, System::EventArgs^ e) {
-	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[1]->Value = textBox_add_name->Text;
-	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[2]->Value = numericUpDown_add_cond->Value;
-	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[3]->Value = numericUpDown_add_cena->Value;
-	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[4]->Value = domainUpDown1->Text;
-	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[5]->Value = dateTimePicker_add->Text;
-	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[6]->Value = maskedTextBox_add_passport->Text;
-	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[7]->Value = numericUpDown_add_srok->Value;
-	label_podskazka->Text = "Подсказка";
-	label_podskazka_text->Text = "Данные строки успешно изменены!";
+private: System::Void dateTimePicker_add_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	label_podskazka->Text = "Дата сдачи товара";
+	label_podskazka_text->Text = "";
 }
 };
 }
