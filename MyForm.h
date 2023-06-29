@@ -656,7 +656,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
 			this->button_redact->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_redact.BackgroundImage")));
 			this->button_redact->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_redact->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button_redact->Location = System::Drawing::Point(818, 117);
+			this->button_redact->Location = System::Drawing::Point(916, 144);
 			this->button_redact->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button_redact->Name = L"button_redact";
 			this->button_redact->Size = System::Drawing::Size(75, 69);
@@ -967,6 +967,16 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void dateTimePicker_add_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	label_podskazka->Text = "Дата сдачи товара";
 	label_podskazka_text->Text = "";
+}
+private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	// Получаем индекс выбранной строки
+	int rowIndex = e->RowIndex;
+
+	// Получаем значение необходимой ячейки
+	String^ cellValue = dataGridView1->Rows[rowIndex]->Cells[0]->Value->ToString();
+
+	// Передаём значение в TextBox
+	numericUpDown_numstrok->Value = System::Convert::ToInt32(cellValue);
 }
 };
 }
