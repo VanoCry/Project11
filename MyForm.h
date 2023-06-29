@@ -410,6 +410,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->dataGridView1->Size = System::Drawing::Size(1397, 495);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick);
+			this->dataGridView1->UserDeletedRow += gcnew System::Windows::Forms::DataGridViewRowEventHandler(this, &MyForm::dataGridView1_UserDeletedRow);
 			// 
 			// Column_number
 			// 
@@ -866,6 +867,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1579, 823);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox_add);
@@ -1043,6 +1045,11 @@ private: System::Void button_erase_Click(System::Object^ sender, System::EventAr
 	dateTimePicker_add->Value = DateTime::Now;
 	maskedTextBox_add_passport->Text = "";
 	numericUpDown_add_srok->Value = 1;
+}
+private: System::Void dataGridView1_UserDeletedRow(System::Object^ sender, System::Windows::Forms::DataGridViewRowEventArgs^ e) {
+	for (int i = 0; i < dataGridView1->Rows->Count; i++) {
+		dataGridView1->Rows[i]->Cells[0]->Value = i + 1;
+	}
 }
 };
 }
