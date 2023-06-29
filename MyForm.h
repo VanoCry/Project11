@@ -407,6 +407,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(1397, 495);
 			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick);
 			// 
 			// Column_number
 			// 
@@ -655,7 +656,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
 			this->button_redact->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_redact.BackgroundImage")));
 			this->button_redact->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_redact->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button_redact->Location = System::Drawing::Point(818, 117);
+			this->button_redact->Location = System::Drawing::Point(916, 144);
 			this->button_redact->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button_redact->Name = L"button_redact";
 			this->button_redact->Size = System::Drawing::Size(75, 69);
@@ -1006,6 +1007,16 @@ private: System::Void button_redact_Click(System::Object^ sender, System::EventA
 	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[7]->Value = numericUpDown_add_srok->Value;
 	label_podskazka->Text = "Подсказка";
 	label_podskazka_text->Text = "Данные строки успешно изменены!";
+}
+private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	// Получаем индекс выбранной строки
+	int rowIndex = e->RowIndex;
+
+	// Получаем значение необходимой ячейки
+	String^ cellValue = dataGridView1->Rows[rowIndex]->Cells[0]->Value->ToString();
+
+	// Передаём значение в TextBox
+	numericUpDown_numstrok->Value = System::Convert::ToInt32(cellValue);
 }
 };
 }
