@@ -161,6 +161,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_valut;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_date;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_passport;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
+private: System::Windows::Forms::Button^ button_erase;
 
 
 
@@ -350,6 +351,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
 			this->сменитьЗадниToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->groupBox_add = (gcnew System::Windows::Forms::GroupBox());
+			this->button_erase = (gcnew System::Windows::Forms::Button());
 			this->label_numstrok = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown_numstrok = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button_redact = (gcnew System::Windows::Forms::Button());
@@ -591,6 +593,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
 			// groupBox_add
 			// 
 			this->groupBox_add->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->groupBox_add->Controls->Add(this->button_erase);
 			this->groupBox_add->Controls->Add(this->label_numstrok);
 			this->groupBox_add->Controls->Add(this->numericUpDown_numstrok);
 			this->groupBox_add->Controls->Add(this->button_redact);
@@ -620,6 +623,20 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
 			this->groupBox_add->TabIndex = 18;
 			this->groupBox_add->TabStop = false;
 			this->groupBox_add->Text = L"Добавить товар";
+			// 
+			// button_erase
+			// 
+			this->button_erase->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_erase.BackgroundImage")));
+			this->button_erase->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->button_erase->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button_erase->Location = System::Drawing::Point(850, 159);
+			this->button_erase->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button_erase->Name = L"button_erase";
+			this->button_erase->Size = System::Drawing::Size(60, 54);
+			this->button_erase->TabIndex = 31;
+			this->toolTip1->SetToolTip(this->button_erase, L"Очистить поля ввода");
+			this->button_erase->UseVisualStyleBackColor = true;
+			this->button_erase->Click += gcnew System::EventHandler(this, &MyForm::button_erase_Click);
 			// 
 			// label_numstrok
 			// 
@@ -1017,6 +1034,15 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 
 	// Передаём значение в TextBox
 	numericUpDown_numstrok->Value = System::Convert::ToInt32(cellValue);
+}
+private: System::Void button_erase_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox_add_name->Text = "";
+	numericUpDown_add_cond->Value = 0;
+	numericUpDown_add_cena->Value = 1000;
+	domainUpDown1->Text = L"₽";
+	dateTimePicker_add->Value = DateTime::Now;
+	maskedTextBox_add_passport->Text = "";
+	numericUpDown_add_srok->Value = 1;
 }
 };
 }
