@@ -1,5 +1,7 @@
-﻿#pragma once
-#include <string.h>
+﻿#include "Formdeletedata.h"
+#include "Form_zapros.h"
+#pragma once
+
 namespace Project11 {
 
 	using namespace System;
@@ -162,146 +164,9 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_date;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_passport;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_days;
 private: System::Windows::Forms::Button^ button_erase;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+private: System::Windows::Forms::ToolStripMenuItem^ очиститьСписокToolStripMenuItem;
+private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
+private: System::Windows::Forms::Button^ button_zapros;
 
 
 
@@ -327,7 +192,7 @@ private: System::Windows::Forms::Button^ button_erase;
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_number = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -344,6 +209,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->открытьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->запросToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->сменитьФонToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->очиститьСписокToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button_add = (gcnew System::Windows::Forms::Button());
 			this->dateTimePicker_add = (gcnew System::Windows::Forms::DateTimePicker());
 			this->textBox_add_name = (gcnew System::Windows::Forms::TextBox());
@@ -372,6 +238,8 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
+			this->button_zapros = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->contextMenuStrip1->SuspendLayout();
@@ -393,21 +261,21 @@ private: System::Windows::Forms::Button^ button_erase;
 				this->Column_number,
 					this->Column_name, this->Column_cond, this->Column_cost, this->Column_valut, this->Column_date, this->Column_passport, this->Column_days
 			});
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle1;
-			this->dataGridView1->Location = System::Drawing::Point(92, 43);
+			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle5;
+			this->dataGridView1->Location = System::Drawing::Point(61, 43);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1397, 495);
+			this->dataGridView1->Size = System::Drawing::Size(1427, 495);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick);
 			this->dataGridView1->UserDeletedRow += gcnew System::Windows::Forms::DataGridViewRowEventHandler(this, &MyForm::dataGridView1_UserDeletedRow);
@@ -480,15 +348,16 @@ private: System::Windows::Forms::Button^ button_erase;
 			// 
 			// menuStrip1
 			// 
+			this->menuStrip1->BackColor = System::Drawing::Color::Honeydew;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->открытьФайлToolStripMenuItem,
-					this->запросToolStripMenuItem, this->сменитьФонToolStripMenuItem
+					this->запросToolStripMenuItem, this->сменитьФонToolStripMenuItem, this->очиститьСписокToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(1579, 28);
+			this->menuStrip1->Size = System::Drawing::Size(1540, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -529,12 +398,19 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->сменитьФонToolStripMenuItem->Text = L"Сменить фон";
 			this->сменитьФонToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сменитьФонToolStripMenuItem_Click);
 			// 
+			// очиститьСписокToolStripMenuItem
+			// 
+			this->очиститьСписокToolStripMenuItem->Name = L"очиститьСписокToolStripMenuItem";
+			this->очиститьСписокToolStripMenuItem->Size = System::Drawing::Size(139, 24);
+			this->очиститьСписокToolStripMenuItem->Text = L"Очистить список";
+			this->очиститьСписокToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::очиститьСписокToolStripMenuItem_Click);
+			// 
 			// button_add
 			// 
 			this->button_add->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_add.BackgroundImage")));
 			this->button_add->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_add->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button_add->Location = System::Drawing::Point(916, 144);
+			this->button_add->Location = System::Drawing::Point(943, 144);
 			this->button_add->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button_add->Name = L"button_add";
 			this->button_add->Size = System::Drawing::Size(75, 69);
@@ -563,7 +439,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->textBox_add_name->Location = System::Drawing::Point(21, 53);
 			this->textBox_add_name->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox_add_name->Name = L"textBox_add_name";
-			this->textBox_add_name->Size = System::Drawing::Size(290, 30);
+			this->textBox_add_name->Size = System::Drawing::Size(289, 30);
 			this->textBox_add_name->TabIndex = 7;
 			this->textBox_add_name->Enter += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
 			// 
@@ -583,9 +459,9 @@ private: System::Windows::Forms::Button^ button_erase;
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(1347, 567);
-			this->button4->Margin = System::Windows::Forms::Padding(4);
+			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(142, 60);
+			this->button4->Size = System::Drawing::Size(141, 60);
 			this->button4->TabIndex = 17;
 			this->button4->Text = L"Добавить строку";
 			this->button4->UseVisualStyleBackColor = true;
@@ -616,11 +492,11 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->groupBox_add->Controls->Add(this->dateTimePicker_add);
 			this->groupBox_add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->groupBox_add->Location = System::Drawing::Point(92, 557);
-			this->groupBox_add->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox_add->Location = System::Drawing::Point(61, 558);
+			this->groupBox_add->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox_add->Name = L"groupBox_add";
-			this->groupBox_add->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox_add->Size = System::Drawing::Size(1008, 239);
+			this->groupBox_add->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox_add->Size = System::Drawing::Size(1037, 239);
 			this->groupBox_add->TabIndex = 18;
 			this->groupBox_add->TabStop = false;
 			this->groupBox_add->Text = L"Добавить товар";
@@ -630,7 +506,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->button_erase->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_erase.BackgroundImage")));
 			this->button_erase->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_erase->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button_erase->Location = System::Drawing::Point(850, 159);
+			this->button_erase->Location = System::Drawing::Point(877, 159);
 			this->button_erase->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button_erase->Name = L"button_erase";
 			this->button_erase->Size = System::Drawing::Size(60, 54);
@@ -659,6 +535,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->numericUpDown_numstrok->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_numstrok->Location = System::Drawing::Point(565, 183);
+			this->numericUpDown_numstrok->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->numericUpDown_numstrok->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 390, 0, 0, 0 });
 			this->numericUpDown_numstrok->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown_numstrok->Name = L"numericUpDown_numstrok";
@@ -674,7 +551,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->button_redact->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_redact.BackgroundImage")));
 			this->button_redact->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_redact->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button_redact->Location = System::Drawing::Point(916, 144);
+			this->button_redact->Location = System::Drawing::Point(943, 144);
 			this->button_redact->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button_redact->Name = L"button_redact";
 			this->button_redact->Size = System::Drawing::Size(75, 69);
@@ -711,6 +588,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->numericUpDown_add_srok->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_add_srok->Location = System::Drawing::Point(329, 182);
+			this->numericUpDown_add_srok->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->numericUpDown_add_srok->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 390, 0, 0, 0 });
 			this->numericUpDown_add_srok->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown_add_srok->Name = L"numericUpDown_add_srok";
@@ -724,6 +602,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->maskedTextBox_add_passport->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->maskedTextBox_add_passport->Location = System::Drawing::Point(329, 116);
+			this->maskedTextBox_add_passport->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->maskedTextBox_add_passport->Mask = L"000000";
 			this->maskedTextBox_add_passport->Name = L"maskedTextBox_add_passport";
 			this->maskedTextBox_add_passport->Size = System::Drawing::Size(213, 30);
@@ -739,11 +618,11 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->domainUpDown1->Items->Add(L"$");
 			this->domainUpDown1->Items->Add(L"£");
 			this->domainUpDown1->Items->Add(L"€");
-			this->domainUpDown1->Location = System::Drawing::Point(254, 183);
-			this->domainUpDown1->Margin = System::Windows::Forms::Padding(4);
+			this->domainUpDown1->Location = System::Drawing::Point(253, 183);
+			this->domainUpDown1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->domainUpDown1->Name = L"domainUpDown1";
 			this->domainUpDown1->ReadOnly = true;
-			this->domainUpDown1->Size = System::Drawing::Size(58, 30);
+			this->domainUpDown1->Size = System::Drawing::Size(59, 30);
 			this->domainUpDown1->TabIndex = 23;
 			this->domainUpDown1->Text = L"₽";
 			this->domainUpDown1->Enter += gcnew System::EventHandler(this, &MyForm::numericUpDown_add_cena_ValueChanged);
@@ -754,11 +633,11 @@ private: System::Windows::Forms::Button^ button_erase;
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_add_cena->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->numericUpDown_add_cena->Location = System::Drawing::Point(20, 183);
-			this->numericUpDown_add_cena->Margin = System::Windows::Forms::Padding(4);
+			this->numericUpDown_add_cena->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->numericUpDown_add_cena->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250000, 0, 0, 0 });
 			this->numericUpDown_add_cena->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
 			this->numericUpDown_add_cena->Name = L"numericUpDown_add_cena";
-			this->numericUpDown_add_cena->Size = System::Drawing::Size(226, 30);
+			this->numericUpDown_add_cena->Size = System::Drawing::Size(227, 30);
 			this->numericUpDown_add_cena->TabIndex = 22;
 			this->numericUpDown_add_cena->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->numericUpDown_add_cena->Enter += gcnew System::EventHandler(this, &MyForm::numericUpDown_add_cena_ValueChanged);
@@ -804,7 +683,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label9->Location = System::Drawing::Point(17, 93);
+			this->label9->Location = System::Drawing::Point(17, 94);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(165, 20);
@@ -840,7 +719,7 @@ private: System::Windows::Forms::Button^ button_erase;
 			this->numericUpDown_add_cond->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_add_cond->Location = System::Drawing::Point(21, 117);
-			this->numericUpDown_add_cond->Margin = System::Windows::Forms::Padding(4);
+			this->numericUpDown_add_cond->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->numericUpDown_add_cond->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
 			this->numericUpDown_add_cond->Name = L"numericUpDown_add_cond";
 			this->numericUpDown_add_cond->Size = System::Drawing::Size(292, 30);
@@ -854,21 +733,34 @@ private: System::Windows::Forms::Button^ button_erase;
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(1347, 635);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(142, 60);
+			this->button1->Size = System::Drawing::Size(141, 60);
 			this->button1->TabIndex = 19;
 			this->button1->Text = L"Редактировать строку";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
+			// button_zapros
+			// 
+			this->button_zapros->Location = System::Drawing::Point(1347, 703);
+			this->button_zapros->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button_zapros->Name = L"button_zapros";
+			this->button_zapros->Size = System::Drawing::Size(141, 60);
+			this->button_zapros->TabIndex = 20;
+			this->button_zapros->Text = L"Запрос по данным";
+			this->button_zapros->UseVisualStyleBackColor = true;
+			this->button_zapros->Click += gcnew System::EventHandler(this, &MyForm::button_zapros_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1579, 823);
+			this->ClientSize = System::Drawing::Size(1540, 823);
+			this->Controls->Add(this->button_zapros);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox_add);
 			this->Controls->Add(this->button4);
@@ -1051,5 +943,41 @@ private: System::Void dataGridView1_UserDeletedRow(System::Object^ sender, Syste
 		dataGridView1->Rows[i]->Cells[0]->Value = i + 1;
 	}
 }
+private: System::Void очиститьСписокToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	Formdeletedata^ form_delete = gcnew Formdeletedata();
+	form_delete->ShowDialog();
+
+	// Проверяем результат диалогового окна
+	if (form_delete->DialogResult == System::Windows::Forms::DialogResult::OK)
+	{
+		// Очищаем список в DataGridView
+		dataGridView1->Rows->Clear();
+		dataGridView1->Refresh();
+		MessageBox::Show("Список успешно очищен!");
+	}
+}
+public: System::Void button_zapros_Click(System::Object^ sender, System::EventArgs^ e) {
+	Form_zapros^ form_zapros = gcnew Form_zapros();
+	DataGridView^ dgv = dataGridView1; 
+
+	for (int i = 0; i < dgv->Rows->Count; i++)
+	{
+		DataGridViewRow^ row = dgv->Rows[i];
+		DataGridViewRow^ newRow = gcnew DataGridViewRow();
+
+		
+		for (int j = 0; j < row->Cells->Count; j++)
+		{
+			DataGridViewCell^ cell = row->Cells[j];
+			DataGridViewCell^ newCell = gcnew DataGridViewTextBoxCell();
+			newCell->Value = cell->Value;
+			newRow->Cells->Add(newCell);
+		}
+		DataGridView^ dgv2 = form_zapros->DataGridView1;
+		dgv2->Rows->Add(newRow);
+		form_zapros->Show();
+	}
+	form_zapros->Show();
+	}
 };
 }
