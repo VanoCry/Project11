@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 namespace Project11 {
 
@@ -8,9 +8,10 @@ namespace Project11 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Collections::Generic;
 
 	/// <summary>
-	/// Сводка для Form_zapros
+	/// РЎРІРѕРґРєР° РґР»СЏ Form_zapros
 	/// </summary>
 	public ref class Form_zapros : public System::Windows::Forms::Form
 	{
@@ -29,7 +30,7 @@ namespace Project11 {
 		
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~Form_zapros()
 		{
@@ -62,8 +63,8 @@ namespace Project11 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ новыйЗапросToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ сменитьФонToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РЅРѕРІС‹Р№Р—Р°РїСЂРѕСЃToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 
@@ -80,7 +81,7 @@ namespace Project11 {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
 	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox1;
 
@@ -107,12 +108,14 @@ namespace Project11 {
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Panel^ panel8;
 	private: System::Windows::Forms::Panel^ panel9;
+	private: System::Windows::Forms::Button^ button_exit_zapros;
+	private: System::Windows::Forms::Button^ button_clear;
 
 
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
+
+
 	private: System::Windows::Forms::Button^ button_zapros;
-	private: System::Windows::Forms::CheckBox^ checkBox_тгьиук;
+
 	private: System::Windows::Forms::CheckBox^ checkBox_srok;
 private: System::Windows::Forms::CheckBox^ checkBox_passport;
 
@@ -120,7 +123,7 @@ private: System::Windows::Forms::CheckBox^ checkBox_passport;
 
 	private: System::Windows::Forms::CheckBox^ checkBox_date;
 	private: System::Windows::Forms::CheckBox^ checkBox_cena;
-	private: System::Windows::Forms::CheckBox^ checkBox_cond;
+
 	private: System::Windows::Forms::CheckBox^ checkBox_valuta;
 	private: System::Windows::Forms::CheckBox^ checkBox_name;
 private: System::Windows::Forms::CheckBox^ checkBox_con;
@@ -129,6 +132,9 @@ private: System::Windows::Forms::CheckBox^ checkBox_number;
 
 private: System::Windows::Forms::NumericUpDown^ numericUpDown7;
 private: System::Windows::Forms::Label^ label12;
+private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
+
 
 
 
@@ -137,14 +143,14 @@ private: System::Windows::Forms::Label^ label12;
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -172,23 +178,23 @@ private: System::Windows::Forms::Label^ label12;
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->новыйЗапросToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->сменитьФонToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РЅРѕРІС‹Р№Р—Р°РїСЂРѕСЃToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->domainUpDown3 = (gcnew System::Windows::Forms::DomainUpDown());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->checkBox_srok = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox_passport = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox_date = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox_cena = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox_con = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox_cond = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox_valuta = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox_number = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox_name = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox_тгьиук = (gcnew System::Windows::Forms::CheckBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button_exit_zapros = (gcnew System::Windows::Forms::Button());
+			this->button_clear = (gcnew System::Windows::Forms::Button());
 			this->button_zapros = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
@@ -213,7 +219,6 @@ private: System::Windows::Forms::Label^ label12;
 			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->numericUpDown7 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -229,7 +234,6 @@ private: System::Windows::Forms::Label^ label12;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
@@ -237,6 +241,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridView1
 			// 
 			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
@@ -266,7 +271,7 @@ private: System::Windows::Forms::Label^ label12;
 			// Column_number
 			// 
 			this->Column_number->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->Column_number->HeaderText = L" №";
+			this->Column_number->HeaderText = L" в„–";
 			this->Column_number->MinimumWidth = 6;
 			this->Column_number->Name = L"Column_number";
 			this->Column_number->ReadOnly = true;
@@ -276,7 +281,7 @@ private: System::Windows::Forms::Label^ label12;
 			// Column_name
 			// 
 			this->Column_name->FillWeight = 55.89743F;
-			this->Column_name->HeaderText = L" Наименование товара";
+			this->Column_name->HeaderText = L" РќР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РѕРІР°СЂР°";
 			this->Column_name->MinimumWidth = 6;
 			this->Column_name->Name = L"Column_name";
 			this->Column_name->ReadOnly = true;
@@ -284,7 +289,7 @@ private: System::Windows::Forms::Label^ label12;
 			// Column_cond
 			// 
 			this->Column_cond->FillWeight = 20;
-			this->Column_cond->HeaderText = L"Состояние товара";
+			this->Column_cond->HeaderText = L"РЎРѕСЃС‚РѕСЏРЅРёРµ С‚РѕРІР°СЂР°";
 			this->Column_cond->MinimumWidth = 6;
 			this->Column_cond->Name = L"Column_cond";
 			this->Column_cond->ReadOnly = true;
@@ -292,7 +297,7 @@ private: System::Windows::Forms::Label^ label12;
 			// Column_cost
 			// 
 			this->Column_cost->FillWeight = 35.89743F;
-			this->Column_cost->HeaderText = L"Оценочная стоимость";
+			this->Column_cost->HeaderText = L"РћС†РµРЅРѕС‡РЅР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ";
 			this->Column_cost->MinimumWidth = 6;
 			this->Column_cost->Name = L"Column_cost";
 			this->Column_cost->ReadOnly = true;
@@ -300,7 +305,7 @@ private: System::Windows::Forms::Label^ label12;
 			// Column_valut
 			// 
 			this->Column_valut->FillWeight = 15.89743F;
-			this->Column_valut->HeaderText = L"Валюта";
+			this->Column_valut->HeaderText = L"Р’Р°Р»СЋС‚Р°";
 			this->Column_valut->MinimumWidth = 6;
 			this->Column_valut->Name = L"Column_valut";
 			this->Column_valut->ReadOnly = true;
@@ -308,7 +313,7 @@ private: System::Windows::Forms::Label^ label12;
 			// Column_date
 			// 
 			this->Column_date->FillWeight = 20.89743F;
-			this->Column_date->HeaderText = L"Дата сдачи";
+			this->Column_date->HeaderText = L"Р”Р°С‚Р° СЃРґР°С‡Рё";
 			this->Column_date->MinimumWidth = 6;
 			this->Column_date->Name = L"Column_date";
 			this->Column_date->ReadOnly = true;
@@ -316,7 +321,7 @@ private: System::Windows::Forms::Label^ label12;
 			// Column_passport
 			// 
 			this->Column_passport->FillWeight = 25.89743F;
-			this->Column_passport->HeaderText = L"Паспортные данные";
+			this->Column_passport->HeaderText = L"РџР°СЃРїРѕСЂС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ";
 			this->Column_passport->MinimumWidth = 6;
 			this->Column_passport->Name = L"Column_passport";
 			this->Column_passport->ReadOnly = true;
@@ -324,7 +329,7 @@ private: System::Windows::Forms::Label^ label12;
 			// Column_days
 			// 
 			this->Column_days->FillWeight = 15.89743F;
-			this->Column_days->HeaderText = L"Срок хранения";
+			this->Column_days->HeaderText = L"РЎСЂРѕРє С…СЂР°РЅРµРЅРёСЏ";
 			this->Column_days->MinimumWidth = 6;
 			this->Column_days->Name = L"Column_days";
 			this->Column_days->ReadOnly = true;
@@ -362,7 +367,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridViewTextBoxColumn1
 			// 
 			this->dataGridViewTextBoxColumn1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->dataGridViewTextBoxColumn1->HeaderText = L" №";
+			this->dataGridViewTextBoxColumn1->HeaderText = L" в„–";
 			this->dataGridViewTextBoxColumn1->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
 			this->dataGridViewTextBoxColumn1->ReadOnly = true;
@@ -372,7 +377,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridViewTextBoxColumn2
 			// 
 			this->dataGridViewTextBoxColumn2->FillWeight = 55.89743F;
-			this->dataGridViewTextBoxColumn2->HeaderText = L" Наименование товара";
+			this->dataGridViewTextBoxColumn2->HeaderText = L" РќР°РёРјРµРЅРѕРІР°РЅРёРµ С‚РѕРІР°СЂР°";
 			this->dataGridViewTextBoxColumn2->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
 			this->dataGridViewTextBoxColumn2->ReadOnly = true;
@@ -380,7 +385,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridViewTextBoxColumn3
 			// 
 			this->dataGridViewTextBoxColumn3->FillWeight = 20;
-			this->dataGridViewTextBoxColumn3->HeaderText = L"Состояние товара";
+			this->dataGridViewTextBoxColumn3->HeaderText = L"РЎРѕСЃС‚РѕСЏРЅРёРµ С‚РѕРІР°СЂР°";
 			this->dataGridViewTextBoxColumn3->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
 			this->dataGridViewTextBoxColumn3->ReadOnly = true;
@@ -388,7 +393,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridViewTextBoxColumn4
 			// 
 			this->dataGridViewTextBoxColumn4->FillWeight = 35.89743F;
-			this->dataGridViewTextBoxColumn4->HeaderText = L"Оценочная стоимость";
+			this->dataGridViewTextBoxColumn4->HeaderText = L"РћС†РµРЅРѕС‡РЅР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ";
 			this->dataGridViewTextBoxColumn4->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
 			this->dataGridViewTextBoxColumn4->ReadOnly = true;
@@ -396,7 +401,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridViewTextBoxColumn5
 			// 
 			this->dataGridViewTextBoxColumn5->FillWeight = 15.89743F;
-			this->dataGridViewTextBoxColumn5->HeaderText = L"Валюта";
+			this->dataGridViewTextBoxColumn5->HeaderText = L"Р’Р°Р»СЋС‚Р°";
 			this->dataGridViewTextBoxColumn5->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
 			this->dataGridViewTextBoxColumn5->ReadOnly = true;
@@ -404,7 +409,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridViewTextBoxColumn6
 			// 
 			this->dataGridViewTextBoxColumn6->FillWeight = 20.89743F;
-			this->dataGridViewTextBoxColumn6->HeaderText = L"Дата сдачи";
+			this->dataGridViewTextBoxColumn6->HeaderText = L"Р”Р°С‚Р° СЃРґР°С‡Рё";
 			this->dataGridViewTextBoxColumn6->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
 			this->dataGridViewTextBoxColumn6->ReadOnly = true;
@@ -412,7 +417,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridViewTextBoxColumn7
 			// 
 			this->dataGridViewTextBoxColumn7->FillWeight = 25.89743F;
-			this->dataGridViewTextBoxColumn7->HeaderText = L"Паспортные данные";
+			this->dataGridViewTextBoxColumn7->HeaderText = L"РџР°СЃРїРѕСЂС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ";
 			this->dataGridViewTextBoxColumn7->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn7->Name = L"dataGridViewTextBoxColumn7";
 			this->dataGridViewTextBoxColumn7->ReadOnly = true;
@@ -420,7 +425,7 @@ private: System::Windows::Forms::Label^ label12;
 			// dataGridViewTextBoxColumn8
 			// 
 			this->dataGridViewTextBoxColumn8->FillWeight = 15.89743F;
-			this->dataGridViewTextBoxColumn8->HeaderText = L"Срок хранения";
+			this->dataGridViewTextBoxColumn8->HeaderText = L"РЎСЂРѕРє С…СЂР°РЅРµРЅРёСЏ";
 			this->dataGridViewTextBoxColumn8->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
 			this->dataGridViewTextBoxColumn8->ReadOnly = true;
@@ -434,7 +439,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(153, 20);
 			this->label1->TabIndex = 3;
-			this->label1->Text = L"Основной список";
+			this->label1->Text = L"РћСЃРЅРѕРІРЅРѕР№ СЃРїРёСЃРѕРє";
 			// 
 			// label2
 			// 
@@ -446,15 +451,15 @@ private: System::Windows::Forms::Label^ label12;
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(211, 20);
 			this->label2->TabIndex = 4;
-			this->label2->Text = L"Запрашиваемый список";
+			this->label2->Text = L"Р—Р°РїСЂР°С€РёРІР°РµРјС‹Р№ СЃРїРёСЃРѕРє";
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->BackColor = System::Drawing::Color::Honeydew;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->новыйЗапросToolStripMenuItem,
-					this->сменитьФонToolStripMenuItem
+				this->РЅРѕРІС‹Р№Р—Р°РїСЂРѕСЃToolStripMenuItem,
+					this->СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -462,18 +467,18 @@ private: System::Windows::Forms::Label^ label12;
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// новыйЗапросToolStripMenuItem
+			// РЅРѕРІС‹Р№Р—Р°РїСЂРѕСЃToolStripMenuItem
 			// 
-			this->новыйЗапросToolStripMenuItem->Name = L"новыйЗапросToolStripMenuItem";
-			this->новыйЗапросToolStripMenuItem->Size = System::Drawing::Size(124, 24);
-			this->новыйЗапросToolStripMenuItem->Text = L"Новый запрос";
+			this->РЅРѕРІС‹Р№Р—Р°РїСЂРѕСЃToolStripMenuItem->Name = L"РЅРѕРІС‹Р№Р—Р°РїСЂРѕСЃToolStripMenuItem";
+			this->РЅРѕРІС‹Р№Р—Р°РїСЂРѕСЃToolStripMenuItem->Size = System::Drawing::Size(124, 24);
+			this->РЅРѕРІС‹Р№Р—Р°РїСЂРѕСЃToolStripMenuItem->Text = L"РќРѕРІС‹Р№ Р·Р°РїСЂРѕСЃ";
 			// 
-			// сменитьФонToolStripMenuItem
+			// СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem
 			// 
-			this->сменитьФонToolStripMenuItem->Name = L"сменитьФонToolStripMenuItem";
-			this->сменитьФонToolStripMenuItem->Size = System::Drawing::Size(115, 24);
-			this->сменитьФонToolStripMenuItem->Text = L"Сменить фон";
-			this->сменитьФонToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::сменитьФонToolStripMenuItem_Click);
+			this->СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem->Name = L"СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem";
+			this->СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem->Size = System::Drawing::Size(115, 24);
+			this->СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem->Text = L"РЎРјРµРЅРёС‚СЊ С„РѕРЅ";
+			this->СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem_Click);
 			// 
 			// openFileDialog1
 			// 
@@ -484,19 +489,19 @@ private: System::Windows::Forms::Label^ label12;
 			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->groupBox1->Controls->Add(this->domainUpDown3);
+			this->groupBox1->Controls->Add(this->textBox2);
 			this->groupBox1->Controls->Add(this->label12);
 			this->groupBox1->Controls->Add(this->checkBox_srok);
 			this->groupBox1->Controls->Add(this->checkBox_passport);
 			this->groupBox1->Controls->Add(this->checkBox_date);
 			this->groupBox1->Controls->Add(this->checkBox_cena);
 			this->groupBox1->Controls->Add(this->checkBox_con);
-			this->groupBox1->Controls->Add(this->checkBox_cond);
 			this->groupBox1->Controls->Add(this->checkBox_valuta);
 			this->groupBox1->Controls->Add(this->checkBox_number);
 			this->groupBox1->Controls->Add(this->checkBox_name);
-			this->groupBox1->Controls->Add(this->checkBox_тгьиук);
-			this->groupBox1->Controls->Add(this->button3);
-			this->groupBox1->Controls->Add(this->button2);
+			this->groupBox1->Controls->Add(this->button_exit_zapros);
+			this->groupBox1->Controls->Add(this->button_clear);
 			this->groupBox1->Controls->Add(this->button_zapros);
 			this->groupBox1->Controls->Add(this->panel3);
 			this->groupBox1->Controls->Add(this->panel2);
@@ -522,7 +527,6 @@ private: System::Windows::Forms::Label^ label12;
 			this->groupBox1->Controls->Add(this->domainUpDown1);
 			this->groupBox1->Controls->Add(this->numericUpDown7);
 			this->groupBox1->Controls->Add(this->label6);
-			this->groupBox1->Controls->Add(this->numericUpDown3);
 			this->groupBox1->Controls->Add(this->label5);
 			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->label4);
@@ -534,7 +538,32 @@ private: System::Windows::Forms::Label^ label12;
 			this->groupBox1->Size = System::Drawing::Size(1498, 189);
 			this->groupBox1->TabIndex = 6;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Меню фильтров";
+			this->groupBox1->Text = L"РњРµРЅСЋ С„РёР»СЊС‚СЂРѕРІ";
+			// 
+			// domainUpDown3
+			// 
+			this->domainUpDown3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->domainUpDown3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->domainUpDown3->Items->Add(L"в‚Ѕ");
+			this->domainUpDown3->Items->Add(L"$");
+			this->domainUpDown3->Items->Add(L"ВЈ");
+			this->domainUpDown3->Items->Add(L"в‚¬");
+			this->domainUpDown3->Location = System::Drawing::Point(768, 58);
+			this->domainUpDown3->Margin = System::Windows::Forms::Padding(4);
+			this->domainUpDown3->Name = L"domainUpDown3";
+			this->domainUpDown3->ReadOnly = true;
+			this->domainUpDown3->Size = System::Drawing::Size(59, 30);
+			this->domainUpDown3->TabIndex = 47;
+			this->domainUpDown3->Text = L"в‚Ѕ";
+			this->domainUpDown3->Visible = false;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(704, 146);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 22);
+			this->textBox2->TabIndex = 46;
 			// 
 			// label12
 			// 
@@ -546,7 +575,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(77, 32);
 			this->label12->TabIndex = 45;
-			this->label12->Text = L"Номер\nпаспорта";
+			this->label12->Text = L"РќРѕРјРµСЂ\nРїР°СЃРїРѕСЂС‚Р°";
 			this->label12->Visible = false;
 			// 
 			// checkBox_srok
@@ -558,7 +587,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->checkBox_srok->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->checkBox_srok->Size = System::Drawing::Size(90, 36);
 			this->checkBox_srok->TabIndex = 44;
-			this->checkBox_srok->Text = L"Срок\nхранения";
+			this->checkBox_srok->Text = L"РЎСЂРѕРє\nС…СЂР°РЅРµРЅРёСЏ";
 			this->checkBox_srok->UseVisualStyleBackColor = true;
 			this->checkBox_srok->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_srok_CheckedChanged);
 			// 
@@ -571,7 +600,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->checkBox_passport->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->checkBox_passport->Size = System::Drawing::Size(110, 36);
 			this->checkBox_passport->TabIndex = 42;
-			this->checkBox_passport->Text = L"Паспортные\nданные";
+			this->checkBox_passport->Text = L"РџР°СЃРїРѕСЂС‚РЅС‹Рµ\nРґР°РЅРЅС‹Рµ";
 			this->checkBox_passport->UseVisualStyleBackColor = true;
 			this->checkBox_passport->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_passport_CheckedChanged);
 			// 
@@ -586,7 +615,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->checkBox_date->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->checkBox_date->Size = System::Drawing::Size(68, 36);
 			this->checkBox_date->TabIndex = 41;
-			this->checkBox_date->Text = L"Дата\nсдачи";
+			this->checkBox_date->Text = L"Р”Р°С‚Р°\nСЃРґР°С‡Рё";
 			this->checkBox_date->UseVisualStyleBackColor = true;
 			this->checkBox_date->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_date_CheckedChanged);
 			// 
@@ -598,32 +627,21 @@ private: System::Windows::Forms::Label^ label12;
 			this->checkBox_cena->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->checkBox_cena->Size = System::Drawing::Size(102, 36);
 			this->checkBox_cena->TabIndex = 40;
-			this->checkBox_cena->Text = L"Оценочная\nстоимость";
+			this->checkBox_cena->Text = L"РћС†РµРЅРѕС‡РЅР°СЏ\nСЃС‚РѕРёРјРѕСЃС‚СЊ";
 			this->checkBox_cena->UseVisualStyleBackColor = true;
 			this->checkBox_cena->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_cena_CheckedChanged);
 			// 
 			// checkBox_con
 			// 
 			this->checkBox_con->AutoSize = true;
-			this->checkBox_con->Location = System::Drawing::Point(395, 22);
+			this->checkBox_con->Location = System::Drawing::Point(402, 14);
 			this->checkBox_con->Name = L"checkBox_con";
 			this->checkBox_con->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->checkBox_con->Size = System::Drawing::Size(149, 20);
+			this->checkBox_con->Size = System::Drawing::Size(99, 36);
 			this->checkBox_con->TabIndex = 39;
-			this->checkBox_con->Text = L"Состояние товара";
+			this->checkBox_con->Text = L"РЎРѕСЃС‚РѕСЏРЅРёРµ\nС‚РѕРІР°СЂР°";
 			this->checkBox_con->UseVisualStyleBackColor = true;
 			this->checkBox_con->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_con_CheckedChanged);
-			// 
-			// checkBox_cond
-			// 
-			this->checkBox_cond->AutoSize = true;
-			this->checkBox_cond->Location = System::Drawing::Point(402, 22);
-			this->checkBox_cond->Name = L"checkBox_cond";
-			this->checkBox_cond->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->checkBox_cond->Size = System::Drawing::Size(149, 20);
-			this->checkBox_cond->TabIndex = 39;
-			this->checkBox_cond->Text = L"Состояние товара";
-			this->checkBox_cond->UseVisualStyleBackColor = true;
 			// 
 			// checkBox_valuta
 			// 
@@ -634,18 +652,19 @@ private: System::Windows::Forms::Label^ label12;
 			this->checkBox_valuta->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->checkBox_valuta->Size = System::Drawing::Size(79, 20);
 			this->checkBox_valuta->TabIndex = 38;
-			this->checkBox_valuta->Text = L"Валюта";
+			this->checkBox_valuta->Text = L"Р’Р°Р»СЋС‚Р°";
 			this->checkBox_valuta->UseVisualStyleBackColor = true;
+			this->checkBox_valuta->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_valuta_CheckedChanged);
 			// 
 			// checkBox_number
 			// 
 			this->checkBox_number->AutoSize = true;
-			this->checkBox_number->Location = System::Drawing::Point(9, 22);
+			this->checkBox_number->Location = System::Drawing::Point(16, 21);
 			this->checkBox_number->Name = L"checkBox_number";
 			this->checkBox_number->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->checkBox_number->Size = System::Drawing::Size(72, 20);
 			this->checkBox_number->TabIndex = 36;
-			this->checkBox_number->Text = L"Номер";
+			this->checkBox_number->Text = L"РќРѕРјРµСЂ";
 			this->checkBox_number->UseVisualStyleBackColor = true;
 			this->checkBox_number->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_number_CheckedChanged);
 			// 
@@ -657,48 +676,38 @@ private: System::Windows::Forms::Label^ label12;
 			this->checkBox_name->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->checkBox_name->Size = System::Drawing::Size(128, 20);
 			this->checkBox_name->TabIndex = 37;
-			this->checkBox_name->Text = L"Наименование";
+			this->checkBox_name->Text = L"РќР°РёРјРµРЅРѕРІР°РЅРёРµ";
 			this->checkBox_name->UseVisualStyleBackColor = true;
 			this->checkBox_name->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_name_CheckedChanged);
 			// 
-			// checkBox_тгьиук
+			// button_exit_zapros
 			// 
-			this->checkBox_тгьиук->AutoSize = true;
-			this->checkBox_тгьиук->Location = System::Drawing::Point(16, 22);
-			this->checkBox_тгьиук->Name = L"checkBox_тгьиук";
-			this->checkBox_тгьиук->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->checkBox_тгьиук->Size = System::Drawing::Size(72, 20);
-			this->checkBox_тгьиук->TabIndex = 36;
-			this->checkBox_тгьиук->Text = L"Номер";
-			this->checkBox_тгьиук->UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this->button3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->button_exit_zapros->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->button3->BackColor = System::Drawing::Color::LightGreen;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->button_exit_zapros->BackColor = System::Drawing::Color::LightGreen;
+			this->button_exit_zapros->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button3->Location = System::Drawing::Point(1381, 146);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(107, 37);
-			this->button3->TabIndex = 35;
-			this->button3->Text = L"пусто";
-			this->button3->UseVisualStyleBackColor = false;
+			this->button_exit_zapros->Location = System::Drawing::Point(1381, 146);
+			this->button_exit_zapros->Name = L"button_exit_zapros";
+			this->button_exit_zapros->Size = System::Drawing::Size(107, 37);
+			this->button_exit_zapros->TabIndex = 35;
+			this->button_exit_zapros->Text = L"Р’С‹Р№С‚Рё";
+			this->button_exit_zapros->UseVisualStyleBackColor = false;
+			this->button_exit_zapros->Click += gcnew System::EventHandler(this, &Form_zapros::button_exit_zapros_Click);
 			// 
-			// button2
+			// button_clear
 			// 
-			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->button_clear->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->button2->BackColor = System::Drawing::Color::LightGreen;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->button_clear->BackColor = System::Drawing::Color::LightGreen;
+			this->button_clear->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button2->Location = System::Drawing::Point(1268, 146);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(107, 37);
-			this->button2->TabIndex = 34;
-			this->button2->Text = L"пусто";
-			this->button2->UseVisualStyleBackColor = false;
+			this->button_clear->Location = System::Drawing::Point(1172, 146);
+			this->button_clear->Name = L"button_clear";
+			this->button_clear->Size = System::Drawing::Size(203, 37);
+			this->button_clear->TabIndex = 34;
+			this->button_clear->Text = L"РћС‡РёСЃС‚РёС‚СЊ С„РёР»СЊС‚СЂС‹";
+			this->button_clear->UseVisualStyleBackColor = false;
 			// 
 			// button_zapros
 			// 
@@ -707,12 +716,13 @@ private: System::Windows::Forms::Label^ label12;
 			this->button_zapros->BackColor = System::Drawing::Color::LightGreen;
 			this->button_zapros->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_zapros->Location = System::Drawing::Point(1155, 146);
+			this->button_zapros->Location = System::Drawing::Point(1059, 146);
 			this->button_zapros->Name = L"button_zapros";
 			this->button_zapros->Size = System::Drawing::Size(107, 37);
 			this->button_zapros->TabIndex = 33;
-			this->button_zapros->Text = L"Запрос";
+			this->button_zapros->Text = L"Р—Р°РїСЂРѕСЃ";
 			this->button_zapros->UseVisualStyleBackColor = false;
+			this->button_zapros->Click += gcnew System::EventHandler(this, &Form_zapros::button_zapros_Click);
 			// 
 			// panel3
 			// 
@@ -779,7 +789,7 @@ private: System::Windows::Forms::Label^ label12;
 			// panel1
 			// 
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->panel1->Location = System::Drawing::Point(556, 22);
+			this->panel1->Location = System::Drawing::Point(557, 21);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(2, 120);
 			this->panel1->TabIndex = 32;
@@ -789,9 +799,11 @@ private: System::Windows::Forms::Label^ label12;
 			this->numericUpDown6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->numericUpDown6->Location = System::Drawing::Point(1289, 117);
 			this->numericUpDown6->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 390, 0, 0, 0 });
+			this->numericUpDown6->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown6->Name = L"numericUpDown6";
 			this->numericUpDown6->Size = System::Drawing::Size(120, 22);
 			this->numericUpDown6->TabIndex = 31;
+			this->numericUpDown6->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown6->Visible = false;
 			// 
 			// numericUpDown5
@@ -799,10 +811,13 @@ private: System::Windows::Forms::Label^ label12;
 			this->numericUpDown5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->numericUpDown5->Location = System::Drawing::Point(1289, 71);
 			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 390, 0, 0, 0 });
+			this->numericUpDown5->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown5->Name = L"numericUpDown5";
 			this->numericUpDown5->Size = System::Drawing::Size(120, 22);
 			this->numericUpDown5->TabIndex = 30;
+			this->numericUpDown5->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown5->Visible = false;
+			this->numericUpDown5->ValueChanged += gcnew System::EventHandler(this, &Form_zapros::numericUpDown5_ValueChanged);
 			// 
 			// label11
 			// 
@@ -814,7 +829,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(26, 16);
 			this->label11->TabIndex = 29;
-			this->label11->Text = L"До";
+			this->label11->Text = L"Р”Рѕ";
 			this->label11->Visible = false;
 			// 
 			// label10
@@ -827,7 +842,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(26, 16);
 			this->label10->TabIndex = 28;
-			this->label10->Text = L"От";
+			this->label10->Text = L"РћС‚";
 			this->label10->Visible = false;
 			// 
 			// maskedTextBox1
@@ -850,7 +865,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(26, 16);
 			this->label9->TabIndex = 25;
-			this->label9->Text = L"До";
+			this->label9->Text = L"Р”Рѕ";
 			this->label9->Visible = false;
 			// 
 			// label7
@@ -863,7 +878,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(26, 16);
 			this->label7->TabIndex = 24;
-			this->label7->Text = L"От";
+			this->label7->Text = L"РћС‚";
 			this->label7->Visible = false;
 			// 
 			// dateTimePicker2
@@ -889,16 +904,17 @@ private: System::Windows::Forms::Label^ label12;
 			this->domainUpDown2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->domainUpDown2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->domainUpDown2->Items->Add(L"Промежуток");
-			this->domainUpDown2->Items->Add(L"=");
-			this->domainUpDown2->Items->Add(L">=");
-			this->domainUpDown2->Items->Add(L"<=");
+			this->domainUpDown2->Items->Add(L"РџСЂРѕРјРµР¶СѓС‚РѕРє");
+			this->domainUpDown2->Items->Add(L"РћС‚");
+			this->domainUpDown2->Items->Add(L"Р”Рѕ");
+			this->domainUpDown2->Items->Add(L"Р”РµРЅСЊ");
 			this->domainUpDown2->Location = System::Drawing::Point(960, 19);
 			this->domainUpDown2->Name = L"domainUpDown2";
 			this->domainUpDown2->Size = System::Drawing::Size(125, 23);
 			this->domainUpDown2->TabIndex = 20;
-			this->domainUpDown2->Text = L"Промежуток";
+			this->domainUpDown2->Text = L"РџСЂРѕРјРµР¶СѓС‚РѕРє";
 			this->domainUpDown2->Visible = false;
+			this->domainUpDown2->SelectedItemChanged += gcnew System::EventHandler(this, &Form_zapros::domainUpDown2_SelectedItemChanged);
 			// 
 			// numericUpDown4
 			// 
@@ -921,7 +937,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(59, 16);
 			this->label8->TabIndex = 18;
-			this->label8->Text = L"Сумма ";
+			this->label8->Text = L"РЎСѓРјРјР° ";
 			this->label8->Visible = false;
 			// 
 			// domainUpDown1
@@ -940,7 +956,7 @@ private: System::Windows::Forms::Label^ label12;
 			// 
 			// numericUpDown7
 			// 
-			this->numericUpDown7->Location = System::Drawing::Point(395, 86);
+			this->numericUpDown7->Location = System::Drawing::Point(402, 87);
 			this->numericUpDown7->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
 			this->numericUpDown7->Name = L"numericUpDown7";
 			this->numericUpDown7->Size = System::Drawing::Size(120, 22);
@@ -952,20 +968,12 @@ private: System::Windows::Forms::Label^ label12;
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label6->Location = System::Drawing::Point(392, 66);
+			this->label6->Location = System::Drawing::Point(399, 67);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(86, 16);
 			this->label6->TabIndex = 15;
-			this->label6->Text = L"Состояние";
+			this->label6->Text = L"РЎРѕСЃС‚РѕСЏРЅРёРµ";
 			this->label6->Visible = false;
-			// 
-			// numericUpDown3
-			// 
-			this->numericUpDown3->Location = System::Drawing::Point(402, 86);
-			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(120, 22);
-			this->numericUpDown3->TabIndex = 14;
-			this->numericUpDown3->Visible = false;
 			// 
 			// label5
 			// 
@@ -976,7 +984,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(118, 16);
 			this->label5->TabIndex = 13;
-			this->label5->Text = L"Наименование";
+			this->label5->Text = L"РќР°РёРјРµРЅРѕРІР°РЅРёРµ";
 			this->label5->Visible = false;
 			// 
 			// textBox1
@@ -996,7 +1004,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(26, 16);
 			this->label4->TabIndex = 11;
-			this->label4->Text = L"До";
+			this->label4->Text = L"Р”Рѕ";
 			this->label4->Visible = false;
 			// 
 			// label3
@@ -1008,24 +1016,29 @@ private: System::Windows::Forms::Label^ label12;
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(26, 16);
 			this->label3->TabIndex = 10;
-			this->label3->Text = L"От";
+			this->label3->Text = L"РћС‚";
 			this->label3->Visible = false;
 			// 
 			// numericUpDown2
 			// 
 			this->numericUpDown2->Location = System::Drawing::Point(16, 108);
+			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
 			this->numericUpDown2->Size = System::Drawing::Size(120, 22);
 			this->numericUpDown2->TabIndex = 9;
+			this->numericUpDown2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown2->Visible = false;
 			// 
 			// numericUpDown1
 			// 
 			this->numericUpDown1->Location = System::Drawing::Point(16, 64);
+			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(120, 22);
 			this->numericUpDown1->TabIndex = 8;
+			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->Visible = false;
+			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Form_zapros::numericUpDown1_ValueChanged);
 			// 
 			// Form_zapros
 			// 
@@ -1041,7 +1054,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Form_zapros";
-			this->Text = L"Form_zapros";
+			this->Text = L"Р¤СѓРЅРєС†РёСЏ Р·Р°РїСЂРѕСЃР° РїРѕ РґР°РЅРЅС‹Рј";
 			this->TopMost = true;
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &Form_zapros::Form_zapros_Load);
@@ -1055,7 +1068,6 @@ private: System::Windows::Forms::Label^ label12;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			this->ResumeLayout(false);
@@ -1065,12 +1077,13 @@ private: System::Windows::Forms::Label^ label12;
 #pragma endregion
 	private: System::Void Form_zapros_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void сменитьФонToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	openFileDialog1->Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF"; // Фильтр только для изображений
-	openFileDialog1->Title = "Выберите изображение";
-	openFileDialog1->ShowDialog();
-	System::String^ filePath = openFileDialog1->FileName;
-	this->BackgroundImage = Image::FromFile(filePath);
+private: System::Void СЃРјРµРЅРёС‚СЊР¤РѕРЅToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	openFileDialog1->Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF"; // Р¤РёР»СЊС‚СЂ С‚РѕР»СЊРєРѕ РґР»СЏ РёР·РѕР±СЂР°Р¶РµРЅРёР№
+	openFileDialog1->Title = "Р’С‹Р±РµСЂРёС‚Рµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ";
+	if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		System::String^ filePath = openFileDialog1->FileName;
+		this->BackgroundImage = Image::FromFile(filePath);
+	}
 }
 
 
@@ -1084,6 +1097,7 @@ private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Form
 private: System::Void checkBox_number_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	numericUpDown1->Maximum = dataGridView1->Rows->Count;
 	numericUpDown2->Maximum = dataGridView1->Rows->Count;
+	numericUpDown2->Value = dataGridView1->Rows->Count;
 	if (checkBox_number->Checked) {
 		label3->Visible = true;
 		label4->Visible = true;
@@ -1118,6 +1132,7 @@ private: System::Void checkBox_con_CheckedChanged(System::Object^ sender, System
 	}
 }
 private: System::Void checkBox_cena_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	domainUpDown1->SelectedItem = L"=";
 	if (checkBox_cena->Checked) {
 		label8->Visible = true;
 		numericUpDown4->Visible = true;
@@ -1131,11 +1146,11 @@ private: System::Void checkBox_cena_CheckedChanged(System::Object^ sender, Syste
 }
 private: System::Void checkBox_date_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (checkBox_date->Checked) {
+		domainUpDown2->Visible = true;
 		label7->Visible = true;
 		label9->Visible = true;
 		dateTimePicker1->Visible = true;
 		dateTimePicker2->Visible = true;
-		domainUpDown2->Visible = true;
 	}
 	else {
 		label7->Visible = false;
@@ -1168,6 +1183,222 @@ private: System::Void checkBox_srok_CheckedChanged(System::Object^ sender, Syste
 		numericUpDown5->Visible = false;
 		numericUpDown6->Visible = false;
 	}
+}
+private: System::Void button_exit_zapros_Click(System::Object^ sender, System::EventArgs^ e) {
+	Form_zapros::Hide();
+}
+private: System::Void button_zapros_Click(System::Object^ sender, System::EventArgs^ e) {
+	List<DataGridViewRow^>^ selectedRows = gcnew List<DataGridViewRow^>;
+	// РџРѕР»СѓС‡Р°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє Рё СЃС‚РѕР»Р±С†РѕРІ РІ dataGridView1
+	int rowsCount = dataGridView1->RowCount;
+	int columnsCount = dataGridView1->ColumnCount;
+
+	// РћС‡РёС‰Р°РµРј dataGridView2 РѕС‚ РїСЂРµРґС‹РґСѓС‰РёС… РґР°РЅРЅС‹С…
+	dataGridView2->Rows->Clear();
+
+	// РљРѕРїРёСЂСѓРµРј РґР°РЅРЅС‹Рµ РёР· dataGridView1 РІ dataGridView2
+	for (int i = 0; i < rowsCount; i++)
+	{
+		// РЎРѕР·РґР°РµРј РЅРѕРІСѓСЋ СЃС‚СЂРѕРєСѓ РІ dataGridView2
+		dataGridView2->Rows->Add();
+
+		for (int j = 0; j < columnsCount; j++)
+		{
+			// РљРѕРїРёСЂСѓРµРј Р·РЅР°С‡РµРЅРёРµ СЏС‡РµР№РєРё РёР· dataGridView1 РІ dataGridView2
+			dataGridView2->Rows[i]->Cells[j]->Value = dataGridView1->Rows[i]->Cells[j]->Value;
+		}
+	}
+	List<int>^ selectedIndexes = gcnew List<int>();
+	if (checkBox_number->Checked) {
+		int num_ot = System::Convert::ToInt32(numericUpDown1->Value);
+		int num_do = System::Convert::ToInt32(numericUpDown2->Value);
+		for each (DataGridViewRow ^ row in dataGridView2->Rows)
+		{
+			int num = System::Convert::ToInt32(row->Cells[0]->Value);
+			if (num < num_ot || num > num_do) {
+				selectedRows->Add(row);
+			}
+		}
+		// РЈРґР°Р»СЏРµРј РІС‹Р±СЂР°РЅРЅС‹Рµ СЃС‚СЂРѕРєРё РёР· DataGridView
+		for each (DataGridViewRow ^ row in selectedRows)
+		{
+			dataGridView2->Rows->Remove(row);
+		}
+		selectedRows->Clear();
+	}
+
+	if (checkBox_name->Checked) {
+		String^ filt_name = System::Convert::ToString(textBox1->Text);
+		if (filt_name != "") {
+			for each (DataGridViewRow ^ row in dataGridView2->Rows)
+			{
+				String^ row_name = System::Convert::ToString(row->Cells[1]->Value);
+				if (filt_name != row_name) {
+					selectedRows->Add(row);
+				}
+			}
+			// РЈРґР°Р»СЏРµРј РІС‹Р±СЂР°РЅРЅС‹Рµ СЃС‚СЂРѕРєРё РёР· DataGridView
+			for each (DataGridViewRow ^ row in selectedRows)
+			{
+				dataGridView2->Rows->Remove(row);
+			}
+			selectedRows->Clear();
+		}
+		else MessageBox::Show("РџСѓСЃС‚Р°СЏ СЃС‚СЂРѕРєР° С„РёР»СЊС‚СЂР° 'РќР°РёРјРµРЅРѕРІР°РЅРёРµ'!");
+	}
+	if (checkBox_con->Checked) {
+		int filt_con = System::Convert::ToInt32(numericUpDown7->Text);
+		for each (DataGridViewRow ^ row in dataGridView2->Rows)
+		{
+			int row_con = System::Convert::ToInt32(row->Cells[2]->Value);
+			if (filt_con != row_con) {
+				selectedRows->Add(row);
+			}
+		}
+		// РЈРґР°Р»СЏРµРј РІС‹Р±СЂР°РЅРЅС‹Рµ СЃС‚СЂРѕРєРё РёР· DataGridView
+		for each (DataGridViewRow ^ row in selectedRows)
+		{
+			dataGridView2->Rows->Remove(row);
+		}
+		selectedRows->Clear();
+	}
+	if (checkBox_passport->Checked) {
+		String^ filt_passport = System::Convert::ToString(maskedTextBox1->Text);
+		if (filt_passport != "") {
+			for each (DataGridViewRow ^ row in dataGridView2->Rows)
+			{
+				String^ row_passport = System::Convert::ToString(row->Cells[6]->Value);
+				if (filt_passport != row_passport) {
+					selectedRows->Add(row);
+				}
+			}
+			// РЈРґР°Р»СЏРµРј РІС‹Р±СЂР°РЅРЅС‹Рµ СЃС‚СЂРѕРєРё РёР· DataGridView
+			for each (DataGridViewRow ^ row in selectedRows)
+			{
+				dataGridView2->Rows->Remove(row);
+			}
+			selectedRows->Clear();
+		}
+		else MessageBox::Show("РџСѓСЃС‚Р°СЏ СЃС‚СЂРѕРєР° С„РёР»СЊС‚СЂР° 'РџР°СЃРїРѕСЂС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ'!");
+	}
+	if (checkBox_number->Checked) {
+		int srok_ot = System::Convert::ToInt32(numericUpDown5->Value);
+		int srok_do = System::Convert::ToInt32(numericUpDown6->Value);
+		for each (DataGridViewRow ^ row in dataGridView2->Rows)
+		{
+			int srok = System::Convert::ToInt32(row->Cells[7]->Value);
+			if (srok < srok_ot || srok > srok_do) {
+				selectedRows->Add(row);
+			}
+		}
+		// РЈРґР°Р»СЏРµРј РІС‹Р±СЂР°РЅРЅС‹Рµ СЃС‚СЂРѕРєРё РёР· DataGridView
+		for each (DataGridViewRow ^ row in selectedRows)
+		{
+			dataGridView2->Rows->Remove(row);
+		}
+		selectedRows->Clear();
+	}
+	if (checkBox_date->Checked) {
+		DateTime date_ot = dateTimePicker1->Value;
+		DateTime date_do = dateTimePicker2->Value;
+		for each (DataGridViewRow ^ row in dataGridView2->Rows)
+		{
+			DateTime date = System::Convert::ToDateTime(row->Cells[5]->Value);
+			textBox2->Text = System::Convert::ToString(date);
+			if (domainUpDown2->SelectedItem == L"РџСЂРѕРјРµР¶СѓС‚РѕРє") {
+				if (date < date_ot || date > date_do)selectedRows->Add(row);
+			}
+			else if (domainUpDown2->SelectedItem == L"Р”РµРЅСЊ") {
+				if (date != date_ot) selectedRows->Add(row);
+			}
+			else if (domainUpDown2->SelectedItem == L"РћС‚") {
+				if (date < date_ot)selectedRows->Add(row);
+			}
+			else if (domainUpDown2->SelectedItem == L"Р”Рѕ") {
+				if (date > date_do)selectedRows->Add(row);
+			}
+		}
+		// РЈРґР°Р»СЏРµРј РІС‹Р±СЂР°РЅРЅС‹Рµ СЃС‚СЂРѕРєРё РёР· DataGridView
+		for each (DataGridViewRow ^ row in selectedRows)
+		{
+			dataGridView2->Rows->Remove(row);
+		}
+		selectedRows->Clear();
+	}
+	if (checkBox_valuta->Checked) {
+		String^ filt_valuta = System::Convert::ToString(domainUpDown3->SelectedItem);
+		for each (DataGridViewRow ^ row in dataGridView2->Rows)
+		{
+			String^ row_valuta = System::Convert::ToString(row->Cells[4]->Value);
+			if(row_valuta != filt_valuta ) selectedRows->Add(row);
+		}
+		for each (DataGridViewRow ^ row in selectedRows)
+		{
+			dataGridView2->Rows->Remove(row);
+		}
+		selectedRows->Clear();
+	}
+	if (checkBox_date->Checked) {
+		int cena_filt = System::Convert::ToInt32(numericUpDown4->Value);
+		for each (DataGridViewRow ^ row in dataGridView2->Rows)
+		{
+			int cena_row = System::Convert::ToInt32(row->Cells[3]->Value);
+			if (domainUpDown1->Text == L"=") {
+				if(cena_filt != cena_row) selectedRows->Add(row);
+			}
+			else if (domainUpDown1->Text == L">=") {
+				if (cena_filt > cena_row) selectedRows->Add(row);
+			}
+			else if (domainUpDown1->Text == L"<=") {
+				if (cena_filt < cena_row) selectedRows->Add(row);
+			}
+		}
+		for each (DataGridViewRow ^ row in selectedRows)
+		{
+			dataGridView2->Rows->Remove(row);
+		}
+	}
+}
+private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	numericUpDown2->Minimum = numericUpDown1->Value;
+}
+private: System::Void numericUpDown5_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+	numericUpDown6->Minimum = numericUpDown5->Value;
+}
+private: System::Void domainUpDown2_SelectedItemChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (domainUpDown2->SelectedItem == L"РџСЂРѕРјРµР¶СѓС‚РѕРє") {
+		label7->Text = "РћС‚";
+		label7->Visible = true;
+		label9->Visible = true;
+		dateTimePicker1->Visible = true;
+		dateTimePicker2->Visible = true;
+	}
+	else if (domainUpDown2->SelectedItem == L"Р”РµРЅСЊ") {
+		label7->Text = "РљРѕРЅРєСЂРµС‚РЅР°СЏ РґР°С‚Р°";
+		label7->Visible = true;
+		label9->Visible = false;
+		dateTimePicker1->Visible = true;
+		dateTimePicker2->Visible = false;
+	}
+	else if (domainUpDown2->SelectedItem == L"Р”Рѕ") {
+		label7->Text = "РћС‚";
+		label7->Visible = true;
+		label9->Visible = false;
+		dateTimePicker1->Visible = true;
+		dateTimePicker2->Visible = false;
+	}
+	else if (domainUpDown2->SelectedItem == L"РћС‚") {
+		label7->Text = "РћС‚";
+		label7->Visible = false;
+		label9->Visible = true;
+		dateTimePicker1->Visible = false;
+		dateTimePicker2->Visible = true;
+	}
+}
+private: System::Void checkBox_valuta_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	domainUpDown3->SelectedItem = L"в‚Ѕ";
+	if (checkBox_valuta->Checked) domainUpDown3->Visible = true;
+	else domainUpDown3->Visible = false;
 }
 };
 }

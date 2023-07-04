@@ -1,5 +1,6 @@
 ﻿#include "Formdeletedata.h"
 #include "Form_zapros.h"
+#include "Form_admin.h"
 #pragma once
 
 namespace Project11 {
@@ -8,6 +9,7 @@ namespace Project11 {
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
+
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::IO;
@@ -71,7 +73,7 @@ namespace Project11 {
 
 
 	private: System::Windows::Forms::ToolStripMenuItem^ открытьФайлToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ запросToolStripMenuItem;
+
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ сменитьЗадниToolStripMenuItem;
 
@@ -167,6 +169,7 @@ private: System::Windows::Forms::Button^ button_erase;
 private: System::Windows::Forms::ToolStripMenuItem^ очиститьСписокToolStripMenuItem;
 private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 private: System::Windows::Forms::Button^ button_zapros;
+private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИспользованияToolStripMenuItem;
 
 
 
@@ -192,7 +195,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_number = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -207,9 +210,9 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->открытьФайлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->сохранитьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->открытьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->запросToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->сменитьФонToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->очиститьСписокToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->сменитьРежимИспользованияToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button_add = (gcnew System::Windows::Forms::Button());
 			this->dateTimePicker_add = (gcnew System::Windows::Forms::DateTimePicker());
 			this->textBox_add_name = (gcnew System::Windows::Forms::TextBox());
@@ -253,6 +256,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 			// dataGridView1
 			// 
 			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::PaleTurquoise;
@@ -261,15 +265,15 @@ private: System::Windows::Forms::Button^ button_zapros;
 				this->Column_number,
 					this->Column_name, this->Column_cond, this->Column_cost, this->Column_valut, this->Column_date, this->Column_passport, this->Column_days
 			});
-			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle5->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle2;
 			this->dataGridView1->Location = System::Drawing::Point(61, 43);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -352,7 +356,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->открытьФайлToolStripMenuItem,
-					this->запросToolStripMenuItem, this->сменитьФонToolStripMenuItem, this->очиститьСписокToolStripMenuItem
+					this->сменитьФонToolStripMenuItem, this->очиститьСписокToolStripMenuItem, this->сменитьРежимИспользованияToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -376,6 +380,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->сохранитьToolStripMenuItem->Name = L"сохранитьToolStripMenuItem";
 			this->сохранитьToolStripMenuItem->Size = System::Drawing::Size(192, 26);
 			this->сохранитьToolStripMenuItem->Text = L"Сохранить как";
+			this->сохранитьToolStripMenuItem->Visible = false;
 			this->сохранитьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сохранитьToolStripMenuItem_Click);
 			// 
 			// открытьToolStripMenuItem
@@ -384,12 +389,6 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->открытьToolStripMenuItem->Size = System::Drawing::Size(192, 26);
 			this->открытьToolStripMenuItem->Text = L"Открыть";
 			this->открытьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::открытьToolStripMenuItem_Click);
-			// 
-			// запросToolStripMenuItem
-			// 
-			this->запросToolStripMenuItem->Name = L"запросToolStripMenuItem";
-			this->запросToolStripMenuItem->Size = System::Drawing::Size(73, 24);
-			this->запросToolStripMenuItem->Text = L"Запрос";
 			// 
 			// сменитьФонToolStripMenuItem
 			// 
@@ -403,7 +402,15 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->очиститьСписокToolStripMenuItem->Name = L"очиститьСписокToolStripMenuItem";
 			this->очиститьСписокToolStripMenuItem->Size = System::Drawing::Size(139, 24);
 			this->очиститьСписокToolStripMenuItem->Text = L"Очистить список";
+			this->очиститьСписокToolStripMenuItem->Visible = false;
 			this->очиститьСписокToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::очиститьСписокToolStripMenuItem_Click);
+			// 
+			// сменитьРежимИспользованияToolStripMenuItem
+			// 
+			this->сменитьРежимИспользованияToolStripMenuItem->Name = L"сменитьРежимИспользованияToolStripMenuItem";
+			this->сменитьРежимИспользованияToolStripMenuItem->Size = System::Drawing::Size(247, 24);
+			this->сменитьРежимИспользованияToolStripMenuItem->Text = L"Сменить режим использования";
+			this->сменитьРежимИспользованияToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сменитьРежимИспользованияToolStripMenuItem_Click);
 			// 
 			// button_add
 			// 
@@ -458,13 +465,16 @@ private: System::Windows::Forms::Button^ button_zapros;
 			// 
 			// button4
 			// 
+			this->button4->BackColor = System::Drawing::Color::LightBlue;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button4->Location = System::Drawing::Point(1347, 567);
-			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(141, 60);
 			this->button4->TabIndex = 17;
 			this->button4->Text = L"Добавить строку";
-			this->button4->UseVisualStyleBackColor = true;
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Visible = false;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// groupBox_add
@@ -493,13 +503,14 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->groupBox_add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->groupBox_add->Location = System::Drawing::Point(61, 558);
-			this->groupBox_add->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox_add->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox_add->Name = L"groupBox_add";
-			this->groupBox_add->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox_add->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox_add->Size = System::Drawing::Size(1037, 239);
 			this->groupBox_add->TabIndex = 18;
 			this->groupBox_add->TabStop = false;
 			this->groupBox_add->Text = L"Добавить товар";
+			this->groupBox_add->Visible = false;
 			// 
 			// button_erase
 			// 
@@ -551,7 +562,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->button_redact->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_redact.BackgroundImage")));
 			this->button_redact->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_redact->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button_redact->Location = System::Drawing::Point(943, 144);
+			this->button_redact->Location = System::Drawing::Point(943, 145);
 			this->button_redact->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button_redact->Name = L"button_redact";
 			this->button_redact->Size = System::Drawing::Size(75, 69);
@@ -619,7 +630,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->domainUpDown1->Items->Add(L"£");
 			this->domainUpDown1->Items->Add(L"€");
 			this->domainUpDown1->Location = System::Drawing::Point(253, 183);
-			this->domainUpDown1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->domainUpDown1->Margin = System::Windows::Forms::Padding(4);
 			this->domainUpDown1->Name = L"domainUpDown1";
 			this->domainUpDown1->ReadOnly = true;
 			this->domainUpDown1->Size = System::Drawing::Size(59, 30);
@@ -633,7 +644,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_add_cena->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->numericUpDown_add_cena->Location = System::Drawing::Point(20, 183);
-			this->numericUpDown_add_cena->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numericUpDown_add_cena->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDown_add_cena->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250000, 0, 0, 0 });
 			this->numericUpDown_add_cena->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
 			this->numericUpDown_add_cena->Name = L"numericUpDown_add_cena";
@@ -719,7 +730,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->numericUpDown_add_cond->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_add_cond->Location = System::Drawing::Point(21, 117);
-			this->numericUpDown_add_cond->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numericUpDown_add_cond->Margin = System::Windows::Forms::Padding(4);
 			this->numericUpDown_add_cond->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
 			this->numericUpDown_add_cond->Name = L"numericUpDown_add_cond";
 			this->numericUpDown_add_cond->Size = System::Drawing::Size(292, 30);
@@ -732,24 +743,29 @@ private: System::Windows::Forms::Button^ button_zapros;
 			// 
 			// button1
 			// 
+			this->button1->BackColor = System::Drawing::SystemColors::Control;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Location = System::Drawing::Point(1347, 635);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(141, 60);
 			this->button1->TabIndex = 19;
 			this->button1->Text = L"Редактировать строку";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Visible = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// button_zapros
 			// 
+			this->button_zapros->BackColor = System::Drawing::SystemColors::Control;
+			this->button_zapros->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button_zapros->Location = System::Drawing::Point(1347, 703);
-			this->button_zapros->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button_zapros->Margin = System::Windows::Forms::Padding(4);
 			this->button_zapros->Name = L"button_zapros";
 			this->button_zapros->Size = System::Drawing::Size(141, 60);
 			this->button_zapros->TabIndex = 20;
 			this->button_zapros->Text = L"Запрос по данным";
-			this->button_zapros->UseVisualStyleBackColor = true;
+			this->button_zapros->UseVisualStyleBackColor = false;
 			this->button_zapros->Click += gcnew System::EventHandler(this, &MyForm::button_zapros_Click);
 			// 
 			// MyForm
@@ -772,7 +788,7 @@ private: System::Windows::Forms::Button^ button_zapros;
 			this->MaximizeBox = false;
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"MyForm";
+			this->Text = L"Ломбард *Режим пользователя*";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyForm::MyForm_FormClosed);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->menuStrip1->ResumeLayout(false);
@@ -790,8 +806,9 @@ private: System::Windows::Forms::Button^ button_zapros;
 		}
 #pragma endregion
 
-		
+		int redact = 0;
 private: System::Void button_add_Click(System::Object^ sender, System::EventArgs^ e) {
+	redact = 0;
 	int i = dataGridView1->Rows->Count;
 	dataGridView1->Rows->Add(Convert::ToString(++i), textBox_add_name->Text, numericUpDown_add_cond->Text, numericUpDown_add_cena->Text, domainUpDown1->Text, dateTimePicker_add->Text, maskedTextBox_add_passport->Text, numericUpDown_add_srok->Text);
 	label_podskazka->Text = "Подсказка";
@@ -801,6 +818,8 @@ private: System::Void MyForm_FormClosed(System::Object^ sender, System::Windows:
 	Application::Exit();
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->button4->BackColor = System::Drawing::Color::LightBlue;
+	this->button1->BackColor = System::Drawing::SystemColors::Control;
 	groupBox_add->Text = "Добавить товар";
 	button_add->Visible = true;
 	button_redact->Visible = false;
@@ -811,6 +830,9 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (dataGridView1->Rows->Count != 0) {
+		this->button1->BackColor = System::Drawing::Color::LightBlue;
+		this->button4->BackColor = System::Drawing::SystemColors::Control;
+		redact = 1;
 		groupBox_add->Text = "Редактировать товар";
 		button_add->Visible = false;
 		button_redact->Visible = true;
@@ -824,12 +846,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	else label_podskazka_text->Text = "Таблица пуста.\nРедактировать нечего.";
 }
 
-private: System::Void сменитьФонToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	openFileDialog1->Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF"; // Фильтр только для изображений
-	openFileDialog1->Title = "Выберите изображение";
-	openFileDialog1->ShowDialog();
-	System::String^ filePath = openFileDialog1->FileName;
-	this->BackgroundImage = Image::FromFile(filePath);
+	private: System::Void сменитьФонToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		openFileDialog1->Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF"; // Фильтр только для изображений
+		openFileDialog1->Title = "Выберите изображение";
+		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK){
+			System::String^ filePath = openFileDialog1->FileName;
+		this->BackgroundImage = Image::FromFile(filePath);
+	}
 }
 private: System::Void сохранитьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Фильтр только для .txt
@@ -850,7 +873,9 @@ private: System::Void сохранитьToolStripMenuItem_Click(System::Object^ 
 	}
 }
 private: System::Void открытьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
-{	
+{
+	openFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Фильтр только для .txt
+	openFileDialog1->Title = "Открыть";
 	if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		System::String^ filePath = openFileDialog1->FileName;
 		dataGridView1->Rows->Clear();
@@ -899,16 +924,19 @@ private: System::Void numericUpDown_numstrok_Enter(System::Object^ sender, Syste
 
 private: System::Void numericUpDown_numstrok_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (numericUpDown_numstrok->Value != 0) {
-		textBox_add_name->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[1]->Value);
-		numericUpDown_add_cond->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[2]->Value);
-		dateTimePicker_add->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[5]->Value);
-		maskedTextBox_add_passport->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[6]->Value);
-		numericUpDown_add_srok->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[7]->Value);
-		domainUpDown1->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[4]->Value);
-		numericUpDown_add_cena->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[3]->Value);
+		if (redact = 1) {
+			textBox_add_name->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[1]->Value);
+			numericUpDown_add_cond->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[2]->Value);
+			dateTimePicker_add->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[5]->Value);
+			maskedTextBox_add_passport->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[6]->Value);
+			numericUpDown_add_srok->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[7]->Value);
+			domainUpDown1->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[4]->Value);
+			numericUpDown_add_cena->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[3]->Value);
+		}
 	}
 }
 private: System::Void button_redact_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[1]->Value = textBox_add_name->Text;
 	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[2]->Value = numericUpDown_add_cond->Value;
 	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[3]->Value = numericUpDown_add_cena->Value;
@@ -927,7 +955,9 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	String^ cellValue = dataGridView1->Rows[rowIndex]->Cells[0]->Value->ToString();
 
 	// Передаём значение в TextBox
-	numericUpDown_numstrok->Value = System::Convert::ToInt32(cellValue);
+	if (redact = 1) {
+		numericUpDown_numstrok->Value = System::Convert::ToInt32(cellValue);
+	}
 }
 private: System::Void button_erase_Click(System::Object^ sender, System::EventArgs^ e) {
 	textBox_add_name->Text = "";
@@ -957,27 +987,59 @@ private: System::Void очиститьСписокToolStripMenuItem_Click(System
 	}
 }
 public: System::Void button_zapros_Click(System::Object^ sender, System::EventArgs^ e) {
-	Form_zapros^ form_zapros = gcnew Form_zapros();
-	DataGridView^ dgv = dataGridView1; 
+	if (dataGridView1->Rows->Count != 0) {
+		Form_zapros^ form_zapros = gcnew Form_zapros();
+		DataGridView^ dgv = dataGridView1;
 
-	for (int i = 0; i < dgv->Rows->Count; i++)
-	{
-		DataGridViewRow^ row = dgv->Rows[i];
-		DataGridViewRow^ newRow = gcnew DataGridViewRow();
-
-		
-		for (int j = 0; j < row->Cells->Count; j++)
+		for (int i = 0; i < dgv->Rows->Count; i++)
 		{
-			DataGridViewCell^ cell = row->Cells[j];
-			DataGridViewCell^ newCell = gcnew DataGridViewTextBoxCell();
-			newCell->Value = cell->Value;
-			newRow->Cells->Add(newCell);
+			DataGridViewRow^ row = dgv->Rows[i];
+			DataGridViewRow^ newRow = gcnew DataGridViewRow();
+
+
+			for (int j = 0; j < row->Cells->Count; j++)
+			{
+				DataGridViewCell^ cell = row->Cells[j];
+				DataGridViewCell^ newCell = gcnew DataGridViewTextBoxCell();
+				newCell->Value = cell->Value;
+				newRow->Cells->Add(newCell);
+			}
+			DataGridView^ dgv2 = form_zapros->DataGridView1;
+			dgv2->Rows->Add(newRow);
 		}
-		DataGridView^ dgv2 = form_zapros->DataGridView1;
-		dgv2->Rows->Add(newRow);
 		form_zapros->Show();
 	}
-	form_zapros->Show();
+	else {
+		MessageBox::Show("Список с товарами пуст!");
 	}
+	}
+
+
+private: System::Void сменитьРежимИспользованияToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	Form_admin^ form_admin = gcnew Form_admin();
+	System::Windows::Forms::DialogResult result = form_admin->ShowDialog();
+	if (result == System::Windows::Forms::DialogResult::Cancel)
+	{
+		button1->Visible = false;
+		button4->Visible = false;
+		groupBox_add->Visible = false;
+		очиститьСписокToolStripMenuItem->Visible = false;
+		сохранитьToolStripMenuItem->Visible = false;
+		MessageBox::Show("Вы перешли в режим пользователя!");
+		dataGridView1->AllowUserToDeleteRows = false;
+		this->Text = L"Ломбард *Режим пользователя*";
+	}
+	if (result == System::Windows::Forms::DialogResult::OK)
+	{
+		button1->Visible = true;
+		button4->Visible = true;
+		groupBox_add->Visible = true;
+		сохранитьToolStripMenuItem->Visible = true;
+		очиститьСписокToolStripMenuItem->Visible = true;
+		dataGridView1->AllowUserToDeleteRows = true;
+		MessageBox::Show("Вы перешли в режим администратора!");
+		this->Text = L"Ломбард *Режим администратора*";
+	}
+}
 };
 }

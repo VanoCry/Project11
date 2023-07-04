@@ -124,11 +124,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Formdeletedata.cpp" />
+    <ClCompile Include="Form_admin.cpp" />
     <ClCompile Include="Form_zapros.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Formdeletedata.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Form_admin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form_zapros.h">
@@ -141,6 +145,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Formdeletedata.resx">
       <DependentUpon>Formdeletedata.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_admin.resx">
+      <DependentUpon>Form_admin.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_zapros.resx">
       <DependentUpon>Form_zapros.h</DependentUpon>
