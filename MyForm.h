@@ -857,6 +857,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void сохранитьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Фильтр только для .txt
 	saveFileDialog1->Title = "Сохранить как";
+	saveFileDialog1->FileName = "lombard_database.txt";
 	
 	
 	if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {

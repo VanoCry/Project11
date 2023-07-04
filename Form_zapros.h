@@ -135,6 +135,7 @@ private: System::Windows::Forms::Label^ label12;
 private: System::Windows::Forms::TextBox^ textBox2;
 private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
+private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 
 
 
@@ -183,6 +184,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 			this->сменитьФонToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->domainUpDown3 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
@@ -226,17 +228,17 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
-			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->groupBox1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataGridView1
@@ -471,8 +473,9 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 			// новыйЗапросToolStripMenuItem
 			// 
 			this->новыйЗапросToolStripMenuItem->Name = L"новыйЗапросToolStripMenuItem";
-			this->новыйЗапросToolStripMenuItem->Size = System::Drawing::Size(124, 24);
-			this->новыйЗапросToolStripMenuItem->Text = L"Новый запрос";
+			this->новыйЗапросToolStripMenuItem->Size = System::Drawing::Size(201, 24);
+			this->новыйЗапросToolStripMenuItem->Text = L"Сохранить запрос в файл";
+			this->новыйЗапросToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::новыйЗапросToolStripMenuItem_Click);
 			// 
 			// сменитьФонToolStripMenuItem
 			// 
@@ -540,6 +543,16 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 			this->groupBox1->TabIndex = 6;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Меню фильтров";
+			// 
+			// numericUpDown3
+			// 
+			this->numericUpDown3->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->numericUpDown3->Location = System::Drawing::Point(575, 86);
+			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250000, 0, 0, 0 });
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(121, 22);
+			this->numericUpDown3->TabIndex = 48;
+			this->numericUpDown3->Visible = false;
 			// 
 			// domainUpDown3
 			// 
@@ -709,6 +722,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 			this->button_clear->TabIndex = 34;
 			this->button_clear->Text = L"Очистить фильтры";
 			this->button_clear->UseVisualStyleBackColor = false;
+			this->button_clear->Click += gcnew System::EventHandler(this, &Form_zapros::button_clear_Click);
 			// 
 			// button_zapros
 			// 
@@ -1029,16 +1043,6 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 			this->numericUpDown1->Visible = false;
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Form_zapros::numericUpDown1_ValueChanged);
 			// 
-			// numericUpDown3
-			// 
-			this->numericUpDown3->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
-			this->numericUpDown3->Location = System::Drawing::Point(575, 86);
-			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250000, 0, 0, 0 });
-			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(121, 22);
-			this->numericUpDown3->TabIndex = 48;
-			this->numericUpDown3->Visible = false;
-			// 
 			// Form_zapros
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1063,12 +1067,12 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 			this->menuStrip1->PerformLayout();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1398,6 +1402,45 @@ private: System::Void checkBox_valuta_CheckedChanged(System::Object^ sender, Sys
 	domainUpDown3->SelectedItem = L"₽";
 	if (checkBox_valuta->Checked) domainUpDown3->Visible = true;
 	else domainUpDown3->Visible = false;
+}
+private: System::Void button_clear_Click(System::Object^ sender, System::EventArgs^ e) {
+	numericUpDown1->Value = 1;
+	numericUpDown2->Value = 1;
+	numericUpDown7->Value = 0;
+	numericUpDown3->Value = 0;
+	numericUpDown5->Value = 1;
+	numericUpDown6->Value = 1;
+	textBox1->Text = "";
+	dateTimePicker1->Value = DateTime::Now;
+	dateTimePicker2->Value = DateTime::Now;
+	maskedTextBox1->Text = "";
+	checkBox_number->Checked = false;
+	checkBox_name->Checked = false;
+	checkBox_con->Checked = false;
+	checkBox_cena->Checked = false;
+	checkBox_valuta->Checked = false;
+	checkBox_date->Checked = false;
+	checkBox_passport->Checked = false;
+	checkBox_srok->Checked = false;
+}
+private: System::Void новыйЗапросToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	saveFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Фильтр только для .txt
+	saveFileDialog1->Title = "Сохранить как";
+	saveFileDialog1->FileName = "lombard_zapros.txt";
+
+
+	if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		System::String^ filePath = saveFileDialog1->FileName;
+		System::IO::StreamWriter^ sw = gcnew System::IO::StreamWriter(filePath);
+		for (int i = 0; i < dataGridView2->Rows->Count; i++) {
+			for (int j = 0; j < dataGridView2->Columns->Count; j++) {
+				sw->Write(dataGridView2->Rows[i]->Cells[j]->Value->ToString() + "\t");
+			}
+			sw->WriteLine("");
+		}
+		sw->Close();
+		MessageBox::Show("Файл успешно сохранен");
+	}
 }
 };
 }
