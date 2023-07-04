@@ -89,7 +89,7 @@ namespace Project11 {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker2;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 	private: System::Windows::Forms::DomainUpDown^ domainUpDown2;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBox1;
 	private: System::Windows::Forms::Label^ label9;
@@ -134,6 +134,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDown7;
 private: System::Windows::Forms::Label^ label12;
 private: System::Windows::Forms::TextBox^ textBox2;
 private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
+private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 
 
 
@@ -214,7 +215,6 @@ private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->domainUpDown2 = (gcnew System::Windows::Forms::DomainUpDown());
-			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->numericUpDown7 = (gcnew System::Windows::Forms::NumericUpDown());
@@ -226,16 +226,17 @@ private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataGridView1
@@ -489,6 +490,7 @@ private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->groupBox1->Controls->Add(this->numericUpDown3);
 			this->groupBox1->Controls->Add(this->domainUpDown3);
 			this->groupBox1->Controls->Add(this->textBox2);
 			this->groupBox1->Controls->Add(this->label12);
@@ -522,7 +524,6 @@ private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 			this->groupBox1->Controls->Add(this->dateTimePicker2);
 			this->groupBox1->Controls->Add(this->dateTimePicker1);
 			this->groupBox1->Controls->Add(this->domainUpDown2);
-			this->groupBox1->Controls->Add(this->numericUpDown4);
 			this->groupBox1->Controls->Add(this->label8);
 			this->groupBox1->Controls->Add(this->domainUpDown1);
 			this->groupBox1->Controls->Add(this->numericUpDown7);
@@ -916,18 +917,6 @@ private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 			this->domainUpDown2->Visible = false;
 			this->domainUpDown2->SelectedItemChanged += gcnew System::EventHandler(this, &Form_zapros::domainUpDown2_SelectedItemChanged);
 			// 
-			// numericUpDown4
-			// 
-			this->numericUpDown4->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
-			this->numericUpDown4->Location = System::Drawing::Point(575, 86);
-			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250000, 0, 0, 0 });
-			this->numericUpDown4->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(170, 22);
-			this->numericUpDown4->TabIndex = 19;
-			this->numericUpDown4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10, 0, 0, 0 });
-			this->numericUpDown4->Visible = false;
-			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -1040,6 +1029,16 @@ private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 			this->numericUpDown1->Visible = false;
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Form_zapros::numericUpDown1_ValueChanged);
 			// 
+			// numericUpDown3
+			// 
+			this->numericUpDown3->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->numericUpDown3->Location = System::Drawing::Point(575, 86);
+			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250000, 0, 0, 0 });
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(121, 22);
+			this->numericUpDown3->TabIndex = 48;
+			this->numericUpDown3->Visible = false;
+			// 
 			// Form_zapros
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1066,10 +1065,10 @@ private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1135,12 +1134,12 @@ private: System::Void checkBox_cena_CheckedChanged(System::Object^ sender, Syste
 	domainUpDown1->SelectedItem = L"=";
 	if (checkBox_cena->Checked) {
 		label8->Visible = true;
-		numericUpDown4->Visible = true;
+		numericUpDown3->Visible = true;
 		domainUpDown1->Visible = true;
 	}
 	else {
 		label8->Visible = false;
-		numericUpDown4->Visible = false;
+		numericUpDown3->Visible = false;
 		domainUpDown1->Visible = false;
 	}
 }
@@ -1338,18 +1337,18 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		}
 		selectedRows->Clear();
 	}
-	if (checkBox_date->Checked) {
-		int cena_filt = System::Convert::ToInt32(numericUpDown4->Value);
+	if (checkBox_cena->Checked) {
+		int cena_filt = System::Convert::ToInt32(numericUpDown3->Value);
 		for each (DataGridViewRow ^ row in dataGridView2->Rows)
 		{
 			int cena_row = System::Convert::ToInt32(row->Cells[3]->Value);
-			if (domainUpDown1->Text == L"=") {
+			if (domainUpDown1->SelectedItem->ToString() == "=") {
 				if(cena_filt != cena_row) selectedRows->Add(row);
 			}
-			else if (domainUpDown1->Text == L">=") {
+			else if (domainUpDown1->SelectedItem->ToString() == ">=") {
 				if (cena_filt > cena_row) selectedRows->Add(row);
 			}
-			else if (domainUpDown1->Text == L"<=") {
+			else if (domainUpDown1->SelectedItem->ToString() == "<=") {
 				if (cena_filt < cena_row) selectedRows->Add(row);
 			}
 		}
