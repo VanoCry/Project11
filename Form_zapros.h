@@ -136,6 +136,7 @@ private: System::Windows::Forms::TextBox^ textBox2;
 private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+private: System::Windows::Forms::TextBox^ textBox3;
 
 
 
@@ -229,6 +230,7 @@ private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->menuStrip1->SuspendLayout();
@@ -493,6 +495,7 @@ private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->groupBox1->Controls->Add(this->textBox3);
 			this->groupBox1->Controls->Add(this->numericUpDown3);
 			this->groupBox1->Controls->Add(this->domainUpDown3);
 			this->groupBox1->Controls->Add(this->textBox2);
@@ -576,7 +579,7 @@ private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 			// 
 			this->textBox2->Location = System::Drawing::Point(704, 146);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 22);
+			this->textBox2->Size = System::Drawing::Size(156, 22);
 			this->textBox2->TabIndex = 46;
 			// 
 			// label12
@@ -1043,6 +1046,13 @@ private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 			this->numericUpDown1->Visible = false;
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Form_zapros::numericUpDown1_ValueChanged);
 			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(521, 146);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(156, 22);
+			this->textBox3->TabIndex = 49;
+			// 
 			// Form_zapros
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1302,12 +1312,14 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		selectedRows->Clear();
 	}
 	if (checkBox_date->Checked) {
-		DateTime date_ot = dateTimePicker1->Value;
-		DateTime date_do = dateTimePicker2->Value;
+		DateTime date_ot = dateTimePicker1->Value.Date;
+		DateTime date_do = dateTimePicker2->Value.Date;
 		for each (DataGridViewRow ^ row in dataGridView2->Rows)
 		{
 			DateTime date = System::Convert::ToDateTime(row->Cells[5]->Value);
+	
 			textBox2->Text = System::Convert::ToString(date);
+			textBox3->Text = System::Convert::ToString(date_ot);
 			if (domainUpDown2->SelectedItem == L"Промежуток") {
 				if (date < date_ot || date > date_do)selectedRows->Add(row);
 			}
@@ -1385,17 +1397,17 @@ private: System::Void domainUpDown2_SelectedItemChanged(System::Object^ sender, 
 	}
 	else if (domainUpDown2->SelectedItem == L"До") {
 		label7->Text = "От";
-		label7->Visible = true;
-		label9->Visible = false;
-		dateTimePicker1->Visible = true;
-		dateTimePicker2->Visible = false;
-	}
-	else if (domainUpDown2->SelectedItem == L"От") {
-		label7->Text = "От";
 		label7->Visible = false;
 		label9->Visible = true;
 		dateTimePicker1->Visible = false;
 		dateTimePicker2->Visible = true;
+	}
+	else if (domainUpDown2->SelectedItem == L"От") {
+		label7->Text = "От";
+		label7->Visible = true;
+		label9->Visible = false;
+		dateTimePicker1->Visible = true;
+		dateTimePicker2->Visible = false;
 	}
 }
 private: System::Void checkBox_valuta_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
