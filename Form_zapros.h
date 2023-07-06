@@ -950,9 +950,9 @@ private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 			this->domainUpDown1->Items->Add(L"=");
 			this->domainUpDown1->Items->Add(L">=");
 			this->domainUpDown1->Items->Add(L"<=");
-			this->domainUpDown1->Location = System::Drawing::Point(682, 21);
+			this->domainUpDown1->Location = System::Drawing::Point(698, 86);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(63, 23);
+			this->domainUpDown1->Size = System::Drawing::Size(53, 23);
 			this->domainUpDown1->TabIndex = 16;
 			this->domainUpDown1->Text = L"=";
 			this->domainUpDown1->Visible = false;
@@ -1284,7 +1284,7 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		}
 		else MessageBox::Show("Пустая строка фильтра 'Паспортные данные'!");
 	}
-	if (checkBox_number->Checked) {
+	if (checkBox_srok->Checked) {
 		int srok_ot = System::Convert::ToInt32(numericUpDown5->Value);
 		int srok_do = System::Convert::ToInt32(numericUpDown6->Value);
 		for each (DataGridViewRow ^ row in dataGridView2->Rows)
@@ -1350,10 +1350,10 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 				if(cena_filt != cena_row) selectedRows->Add(row);
 			}
 			else if (domainUpDown1->SelectedItem->ToString() == ">=") {
-				if (cena_filt > cena_row) selectedRows->Add(row);
+				if (cena_filt < cena_row) selectedRows->Add(row);
 			}
 			else if (domainUpDown1->SelectedItem->ToString() == "<=") {
-				if (cena_filt < cena_row) selectedRows->Add(row);
+				if (cena_filt > cena_row) selectedRows->Add(row);
 			}
 		}
 		for each (DataGridViewRow ^ row in selectedRows)
