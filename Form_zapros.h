@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#include "game.h"
+#pragma once
 
 namespace Project11 {
 
@@ -132,11 +133,12 @@ private: System::Windows::Forms::CheckBox^ checkBox_number;
 
 private: System::Windows::Forms::NumericUpDown^ numericUpDown7;
 private: System::Windows::Forms::Label^ label12;
-private: System::Windows::Forms::TextBox^ textBox2;
+
 private: System::Windows::Forms::DomainUpDown^ domainUpDown3;
 private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
-private: System::Windows::Forms::TextBox^ textBox3;
+private: System::Windows::Forms::ToolStripMenuItem^ играToolStripMenuItem;
+
 
 
 
@@ -187,7 +189,6 @@ private: System::Windows::Forms::TextBox^ textBox3;
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->domainUpDown3 = (gcnew System::Windows::Forms::DomainUpDown());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->checkBox_srok = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox_passport = (gcnew System::Windows::Forms::CheckBox());
@@ -230,7 +231,7 @@ private: System::Windows::Forms::TextBox^ textBox3;
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->играToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->menuStrip1->SuspendLayout();
@@ -462,9 +463,9 @@ private: System::Windows::Forms::TextBox^ textBox3;
 			// 
 			this->menuStrip1->BackColor = System::Drawing::Color::Honeydew;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->новыйЗапросToolStripMenuItem,
-					this->сменитьФонToolStripMenuItem
+					this->сменитьФонToolStripMenuItem, this->играToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -495,10 +496,8 @@ private: System::Windows::Forms::TextBox^ textBox3;
 			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->groupBox1->Controls->Add(this->textBox3);
 			this->groupBox1->Controls->Add(this->numericUpDown3);
 			this->groupBox1->Controls->Add(this->domainUpDown3);
-			this->groupBox1->Controls->Add(this->textBox2);
 			this->groupBox1->Controls->Add(this->label12);
 			this->groupBox1->Controls->Add(this->checkBox_srok);
 			this->groupBox1->Controls->Add(this->checkBox_passport);
@@ -574,13 +573,6 @@ private: System::Windows::Forms::TextBox^ textBox3;
 			this->domainUpDown3->TabIndex = 47;
 			this->domainUpDown3->Text = L"₽";
 			this->domainUpDown3->Visible = false;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(704, 146);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(156, 22);
-			this->textBox2->TabIndex = 46;
 			// 
 			// label12
 			// 
@@ -1046,12 +1038,12 @@ private: System::Windows::Forms::TextBox^ textBox3;
 			this->numericUpDown1->Visible = false;
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Form_zapros::numericUpDown1_ValueChanged);
 			// 
-			// textBox3
+			// играToolStripMenuItem
 			// 
-			this->textBox3->Location = System::Drawing::Point(521, 146);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(156, 22);
-			this->textBox3->TabIndex = 49;
+			this->играToolStripMenuItem->Name = L"играToolStripMenuItem";
+			this->играToolStripMenuItem->Size = System::Drawing::Size(57, 24);
+			this->играToolStripMenuItem->Text = L"Игра";
+			this->играToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::играToolStripMenuItem_Click);
 			// 
 			// Form_zapros
 			// 
@@ -1318,8 +1310,7 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		{
 			DateTime date = System::Convert::ToDateTime(row->Cells[5]->Value);
 	
-			textBox2->Text = System::Convert::ToString(date);
-			textBox3->Text = System::Convert::ToString(date_ot);
+			
 			if (domainUpDown2->SelectedItem == L"Промежуток") {
 				if (date < date_ot || date > date_do)selectedRows->Add(row);
 			}
@@ -1453,6 +1444,12 @@ private: System::Void новыйЗапросToolStripMenuItem_Click(System::Obje
 		sw->Close();
 		MessageBox::Show("Файл успешно сохранен");
 	}
+}
+
+
+private: System::Void играToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	game^ form_game = gcnew game();
+	form_game->Show();
 }
 };
 }

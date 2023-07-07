@@ -22,6 +22,14 @@ namespace Project11 {
 			//TODO: добавьте код конструктора
 			//
 		}
+		property String^ TextBoxValue {
+			String^ get() { return textBox1->Text; }
+			void set(String^ value) { textBox1->Text = value; }
+		}
+		property String^ MainTextValue {
+			String^ get() { return this->Text; }
+			void set(String^ value) { this->Text = value; }
+		}
 
 	protected:
 		/// <summary>
@@ -65,11 +73,11 @@ namespace Project11 {
 			this->button_yes->FlatStyle = System::Windows::Forms::FlatStyle::System;
 			this->button_yes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_yes->Location = System::Drawing::Point(14, 194);
+			this->button_yes->Location = System::Drawing::Point(302, 194);
 			this->button_yes->Name = L"button_yes";
 			this->button_yes->Size = System::Drawing::Size(131, 50);
 			this->button_yes->TabIndex = 0;
-			this->button_yes->Text = L"Да";
+			this->button_yes->Text = L"Нет";
 			this->button_yes->UseVisualStyleBackColor = true;
 			this->button_yes->Click += gcnew System::EventHandler(this, &Formdeletedata::button_yes_Click);
 			// 
@@ -78,11 +86,11 @@ namespace Project11 {
 			this->button_no->FlatStyle = System::Windows::Forms::FlatStyle::System;
 			this->button_no->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_no->Location = System::Drawing::Point(302, 194);
+			this->button_no->Location = System::Drawing::Point(14, 194);
 			this->button_no->Name = L"button_no";
 			this->button_no->Size = System::Drawing::Size(131, 50);
 			this->button_no->TabIndex = 1;
-			this->button_no->Text = L"Нет";
+			this->button_no->Text = L"Да";
 			this->button_no->UseVisualStyleBackColor = true;
 			this->button_no->Click += gcnew System::EventHandler(this, &Formdeletedata::button_no_Click);
 			// 
@@ -96,7 +104,6 @@ namespace Project11 {
 			this->textBox1->ReadOnly = true;
 			this->textBox1->Size = System::Drawing::Size(419, 176);
 			this->textBox1->TabIndex = 3;
-			this->textBox1->Text = L"Данное действие приведёт к удалению всех данных из списка.Вы уверены\?";
 			this->textBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// Formdeletedata
@@ -110,19 +117,22 @@ namespace Project11 {
 			this->Name = L"Formdeletedata";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Удаление списка";
+			this->Load += gcnew System::EventHandler(this, &Formdeletedata::Formdeletedata_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void button_yes_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->DialogResult = System::Windows::Forms::DialogResult::OK;
+		this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 		this->Close();
 	}
 
 	private: System::Void button_no_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+		this->DialogResult = System::Windows::Forms::DialogResult::OK;
 		this->Close();
 	}
-	};
+	private: System::Void Formdeletedata_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

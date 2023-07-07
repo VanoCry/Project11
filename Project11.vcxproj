@@ -126,6 +126,7 @@
     <ClCompile Include="Formdeletedata.cpp" />
     <ClCompile Include="Form_admin.cpp" />
     <ClCompile Include="Form_zapros.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form_zapros.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="game.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm.h">
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_zapros.resx">
       <DependentUpon>Form_zapros.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="game.resx">
+      <DependentUpon>game.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>

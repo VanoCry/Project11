@@ -1,6 +1,7 @@
 ﻿#include "Formdeletedata.h"
 #include "Form_zapros.h"
 #include "Form_admin.h"
+#include "game.h"
 #pragma once
 
 namespace Project11 {
@@ -170,6 +171,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ очиститьСписок
 private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 private: System::Windows::Forms::Button^ button_zapros;
 private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИспользованияToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ играToolStripMenuItem;
 
 
 
@@ -195,7 +197,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИс
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_number = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -210,9 +212,10 @@ private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИс
 			this->открытьФайлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->сохранитьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->открытьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->сменитьФонToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->очиститьСписокToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->сменитьРежимИспользованияToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->играToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->сменитьФонToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button_add = (gcnew System::Windows::Forms::Button());
 			this->dateTimePicker_add = (gcnew System::Windows::Forms::DateTimePicker());
 			this->textBox_add_name = (gcnew System::Windows::Forms::TextBox());
@@ -255,6 +258,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИс
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowDrop = true;
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->Anchor = System::Windows::Forms::AnchorStyles::Top;
@@ -265,15 +269,15 @@ private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИс
 				this->Column_number,
 					this->Column_name, this->Column_cond, this->Column_cost, this->Column_valut, this->Column_date, this->Column_passport, this->Column_days
 			});
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->Location = System::Drawing::Point(61, 43);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -283,6 +287,8 @@ private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИс
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick);
 			this->dataGridView1->UserDeletedRow += gcnew System::Windows::Forms::DataGridViewRowEventHandler(this, &MyForm::dataGridView1_UserDeletedRow);
+			this->dataGridView1->DragDrop += gcnew System::Windows::Forms::DragEventHandler(this, &MyForm::dataGridView1_DragDrop);
+			this->dataGridView1->DragEnter += gcnew System::Windows::Forms::DragEventHandler(this, &MyForm::dataGridView1_DragEnter);
 			// 
 			// Column_number
 			// 
@@ -354,9 +360,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИс
 			// 
 			this->menuStrip1->BackColor = System::Drawing::Color::Honeydew;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->открытьФайлToolStripMenuItem,
-					this->сменитьФонToolStripMenuItem, this->очиститьСписокToolStripMenuItem, this->сменитьРежимИспользованияToolStripMenuItem
+					this->очиститьСписокToolStripMenuItem, this->играToolStripMenuItem, this->сменитьРежимИспользованияToolStripMenuItem, this->сменитьФонToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -390,13 +396,6 @@ private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИс
 			this->открытьToolStripMenuItem->Text = L"Открыть";
 			this->открытьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::открытьToolStripMenuItem_Click);
 			// 
-			// сменитьФонToolStripMenuItem
-			// 
-			this->сменитьФонToolStripMenuItem->Name = L"сменитьФонToolStripMenuItem";
-			this->сменитьФонToolStripMenuItem->Size = System::Drawing::Size(115, 24);
-			this->сменитьФонToolStripMenuItem->Text = L"Сменить фон";
-			this->сменитьФонToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сменитьФонToolStripMenuItem_Click);
-			// 
 			// очиститьСписокToolStripMenuItem
 			// 
 			this->очиститьСписокToolStripMenuItem->Name = L"очиститьСписокToolStripMenuItem";
@@ -411,6 +410,20 @@ private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИс
 			this->сменитьРежимИспользованияToolStripMenuItem->Size = System::Drawing::Size(247, 24);
 			this->сменитьРежимИспользованияToolStripMenuItem->Text = L"Сменить режим использования";
 			this->сменитьРежимИспользованияToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сменитьРежимИспользованияToolStripMenuItem_Click);
+			// 
+			// играToolStripMenuItem
+			// 
+			this->играToolStripMenuItem->Name = L"играToolStripMenuItem";
+			this->играToolStripMenuItem->Size = System::Drawing::Size(57, 24);
+			this->играToolStripMenuItem->Text = L"Игра";
+			this->играToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::играToolStripMenuItem_Click);
+			// 
+			// сменитьФонToolStripMenuItem
+			// 
+			this->сменитьФонToolStripMenuItem->Name = L"сменитьФонToolStripMenuItem";
+			this->сменитьФонToolStripMenuItem->Size = System::Drawing::Size(115, 24);
+			this->сменитьФонToolStripMenuItem->Text = L"Сменить фон";
+			this->сменитьФонToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сменитьФонToolStripMenuItem_Click);
 			// 
 			// button_add
 			// 
@@ -818,6 +831,7 @@ private: System::Void MyForm_FormClosed(System::Object^ sender, System::Windows:
 	Application::Exit();
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	clear_add_stroke();
 	this->button4->BackColor = System::Drawing::Color::LightBlue;
 	this->button1->BackColor = System::Drawing::SystemColors::Control;
 	groupBox_add->Text = "Добавить товар";
@@ -960,7 +974,7 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 		numericUpDown_numstrok->Value = System::Convert::ToInt32(cellValue);
 	}
 }
-private: System::Void button_erase_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void clear_add_stroke() {
 	textBox_add_name->Text = "";
 	numericUpDown_add_cond->Value = 0;
 	numericUpDown_add_cena->Value = 1000;
@@ -969,6 +983,9 @@ private: System::Void button_erase_Click(System::Object^ sender, System::EventAr
 	maskedTextBox_add_passport->Text = "";
 	numericUpDown_add_srok->Value = 1;
 }
+private: System::Void button_erase_Click(System::Object^ sender, System::EventArgs^ e) {
+	clear_add_stroke();
+}
 private: System::Void dataGridView1_UserDeletedRow(System::Object^ sender, System::Windows::Forms::DataGridViewRowEventArgs^ e) {
 	for (int i = 0; i < dataGridView1->Rows->Count; i++) {
 		dataGridView1->Rows[i]->Cells[0]->Value = i + 1;
@@ -976,6 +993,8 @@ private: System::Void dataGridView1_UserDeletedRow(System::Object^ sender, Syste
 }
 private: System::Void очиститьСписокToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	Formdeletedata^ form_delete = gcnew Formdeletedata();
+	form_delete->TextBoxValue = "Это действие удалить все данные списка. Вы уверены?";
+	form_delete->MainTextValue = "Удаление данных";
 	form_delete->ShowDialog();
 
 	// Проверяем результат диалогового окна
@@ -1041,6 +1060,95 @@ private: System::Void сменитьРежимИспользованияToolStri
 		MessageBox::Show("Вы перешли в режим администратора!");
 		this->Text = L"Ломбард *Режим администратора*";
 	}
+}
+private: System::Void играToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	game^ form_game = gcnew game();
+	form_game->Show();
+}
+private: System::Void dataGridView1_DragDrop(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
+	// Проверяем, что перетаскиваемый объект является файлом
+	if (e->Data->GetDataPresent(DataFormats::FileDrop))
+	{
+		// Получаем массив файлов, перетащенных в DataGridView
+		array<String^>^ files = (array<String^>^)e->Data->GetData(DataFormats::FileDrop);
+
+		// Проверяем, что массив файлов содержит хотя бы один файл
+		if (files->Length > 0)
+		{
+			// Получаем путь к первому файлу в массиве
+			String^ filePath = files[0];
+
+			// Проверяем расширение файла
+			if (Path::GetExtension(filePath)->ToLower() == ".txt")
+			{
+				Formdeletedata^ form_delete = gcnew Formdeletedata();
+				
+				// Проверяем результат диалогового окна
+				if (dataGridView1->Rows->Count == 0) {
+					dataGridView1->Rows->Clear();
+					System::IO::StreamReader^ sr = gcnew System::IO::StreamReader(filePath);
+					while (!sr->EndOfStream) {
+						String^ line = sr->ReadLine();
+						array<String^>^ values = line->Split('\t');
+						dataGridView1->Rows->Add(values);
+					}
+				}
+				else {
+					form_delete->TextBoxValue = "При перетаскивании нового файла предыдущие данные таблицы будут очищены. Вы уверены?";
+					form_delete->MainTextValue = "Перетаскивание файла";
+					form_delete->ShowDialog();
+					if (form_delete->DialogResult == System::Windows::Forms::DialogResult::OK)
+				{
+					// Очищаем список в DataGridView
+					dataGridView1->Rows->Clear();
+					dataGridView1->Refresh();
+					// Добавляем содержимое файла в DataGridView
+					// Вам нужно установить правильный источник данных для вашего DataGridView
+					dataGridView1->Rows->Clear();
+					System::IO::StreamReader^ sr = gcnew System::IO::StreamReader(filePath);
+					while (!sr->EndOfStream) {
+						String^ line = sr->ReadLine();
+						array<String^>^ values = line->Split('\t');
+						dataGridView1->Rows->Add(values);
+
+					}
+				}
+			}
+			}
+				else
+				{
+					// Если файл имеет неправильное расширение, выводим сообщение об ошибке
+					MessageBox::Show("Пожалуйста, перетащите текстовый файл (.txt).");
+				}
+			}
+		}
+	}
+
+private: System::Void dataGridView1_DragEnter(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
+	// Проверяем, что перетаскиваемый объект является файлом
+	if (e->Data->GetDataPresent(DataFormats::FileDrop))
+	{
+		// Получаем массив файлов, перетащенных в DataGridView
+		array<String^>^ files = (array<String^>^)e->Data->GetData(DataFormats::FileDrop);
+
+		// Проверяем, что массив файлов содержит хотя бы один файл
+		if (files->Length > 0)
+		{
+			// Получаем путь к первому файлу в массиве
+			String^ filePath = files[0];
+
+			// Проверяем расширение файла
+			if (Path::GetExtension(filePath)->ToLower() == ".txt")
+			{
+				// Разрешаем перетаскивание файлов в DataGridView
+				e->Effect = DragDropEffects::Copy;
+				return;
+			}
+		}
+	}
+
+	// Если файл имеет неправильное расширение или это не файл, запрещаем перетаскивание
+	e->Effect = DragDropEffects::None;
 }
 };
 }
