@@ -1450,6 +1450,7 @@ private: System::Void новыйЗапросToolStripMenuItem_Click(System::Obje
 private: System::Void играToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	game^ form_game = gcnew game();
 	form_game->Show();
+	form_game->TopMost = true;
 }
 };
 }

@@ -439,6 +439,7 @@ namespace Project11 {
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->label1);
 			this->Name = L"game";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"2048";
 			this->Load += gcnew System::EventHandler(this, &game::game_Load);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &game::game_KeyDown);

@@ -1064,6 +1064,7 @@ private: System::Void сменитьРежимИспользованияToolStri
 private: System::Void играToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	game^ form_game = gcnew game();
 	form_game->Show();
+	form_game->TopMost = true;
 }
 private: System::Void dataGridView1_DragDrop(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
 	// Проверяем, что перетаскиваемый объект является файлом
