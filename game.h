@@ -734,7 +734,7 @@ namespace Project11 {
 			if (result == System::Windows::Forms::DialogResult::Yes)
 				startNewGame(matrix);
 			if (result == System::Windows::Forms::DialogResult::No)
-				Application::Exit();
+				this->Hide();
 		}
 
 		int didAction = 0;

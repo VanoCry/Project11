@@ -21,9 +21,6 @@
     <ClCompile Include="Formdeletedata.cpp">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>
-    <ClCompile Include="Form_zapros.cpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClCompile>
     <ClCompile Include="Form_admin.cpp">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>

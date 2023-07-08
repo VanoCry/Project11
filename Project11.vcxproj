@@ -125,7 +125,6 @@
   <ItemGroup>
     <ClCompile Include="Formdeletedata.cpp" />
     <ClCompile Include="Form_admin.cpp" />
-    <ClCompile Include="Form_zapros.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
