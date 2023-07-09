@@ -69,7 +69,7 @@ namespace Project11 {
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void){
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_number = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -139,15 +139,15 @@ namespace Project11 {
 				this->Column_number,
 					this->Column_name, this->Column_cond, this->Column_cost, this->Column_valut, this->Column_date, this->Column_passport, this->Column_days
 			});
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->Location = System::Drawing::Point(61, 43);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -670,6 +670,7 @@ namespace Project11 {
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Ломбард *Режим пользователя*";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm::MyForm_FormClosing);
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyForm::MyForm_FormClosed);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->menuStrip1->ResumeLayout(false);
@@ -962,5 +963,23 @@ private: System::Void справкаToolStripMenuItem_Click(System::Object^ send
 	faq_form->Show();
 	faq_form->TopMost = true;
 }
+	private: System::Void MyForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+		if (dataGridView1->Rows->Count != 0) {
+			if (MessageBox::Show(L"Хотите сохранить данные перед выходом?", L"Предупреждение", MessageBoxButtons::YesNo, MessageBoxIcon::Question) != System::Windows::Forms::DialogResult::No)
+			{
+				saveFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Фильтр только для .txt
+				saveFileDialog1->Title = "Сохранить как";
+				saveFileDialog1->FileName = "lombard_database.txt";
+				if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+					System::String^ filePath = saveFileDialog1->FileName;
+					System::IO::StreamWriter^ sw = gcnew System::IO::StreamWriter(filePath);
+					for (int i = 0; i < dataGridView1->Rows->Count; i++) {
+						for (int j = 0; j < dataGridView1->Columns->Count; j++) {
+							sw->Write(dataGridView1->Rows[i]->Cells[j]->Value->ToString() + "\t");
+						}
+						sw->WriteLine("");
+					}
+					sw->Close();
+				}}}}
 };
 }
