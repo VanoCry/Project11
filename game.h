@@ -3,34 +3,15 @@
 #include <time.h>
 #include <stdlib.h>
 namespace Project11 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	public ref class game : public System::Windows::Forms::Form
-	{
-	public:
-		game(void)
-		{
-			InitializeComponent();
-			
-		}
-	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		~game()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
-
-	protected:
+	public ref class game : public System::Windows::Forms::Form{
+	public: game(void){InitializeComponent();}
+	protected: ~game(){if (components){delete components;}}
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Label^ label2;
@@ -51,10 +32,8 @@ namespace Project11 {
 	private: System::Windows::Forms::Label^ label17;
 	private:
 		System::ComponentModel::Container^ components;
-
 #pragma region Windows Form Designer generated code
-		void InitializeComponent(void)
-		{
+		void InitializeComponent(void){
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(game::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
@@ -144,7 +123,6 @@ namespace Project11 {
 			this->label2->TabIndex = 0;
 			this->label2->Text = L"1234";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label2->Click += gcnew System::EventHandler(this, &game::label2_Click);
 			// 
 			// label3
 			// 
@@ -163,7 +141,6 @@ namespace Project11 {
 			this->label3->TabIndex = 1;
 			this->label3->Text = L"1234";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label3->Click += gcnew System::EventHandler(this, &game::label3_Click);
 			// 
 			// label4
 			// 
@@ -182,7 +159,6 @@ namespace Project11 {
 			this->label4->TabIndex = 2;
 			this->label4->Text = L"1234";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label4->Click += gcnew System::EventHandler(this, &game::label4_Click);
 			// 
 			// label5
 			// 
@@ -201,7 +177,6 @@ namespace Project11 {
 			this->label5->TabIndex = 3;
 			this->label5->Text = L"1234";
 			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label5->Click += gcnew System::EventHandler(this, &game::label5_Click);
 			// 
 			// label6
 			// 
@@ -220,7 +195,6 @@ namespace Project11 {
 			this->label6->TabIndex = 4;
 			this->label6->Text = L"1234";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label6->Click += gcnew System::EventHandler(this, &game::label6_Click);
 			// 
 			// label7
 			// 
@@ -239,7 +213,6 @@ namespace Project11 {
 			this->label7->TabIndex = 5;
 			this->label7->Text = L"1234";
 			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label7->Click += gcnew System::EventHandler(this, &game::label7_Click);
 			// 
 			// label8
 			// 
@@ -258,7 +231,6 @@ namespace Project11 {
 			this->label8->TabIndex = 6;
 			this->label8->Text = L"1234";
 			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label8->Click += gcnew System::EventHandler(this, &game::label8_Click);
 			// 
 			// label9
 			// 
@@ -277,7 +249,6 @@ namespace Project11 {
 			this->label9->TabIndex = 7;
 			this->label9->Text = L"1234";
 			this->label9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label9->Click += gcnew System::EventHandler(this, &game::label9_Click);
 			// 
 			// label10
 			// 
@@ -296,7 +267,6 @@ namespace Project11 {
 			this->label10->TabIndex = 8;
 			this->label10->Text = L"1234";
 			this->label10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label10->Click += gcnew System::EventHandler(this, &game::label10_Click);
 			// 
 			// label11
 			// 
@@ -315,7 +285,6 @@ namespace Project11 {
 			this->label11->TabIndex = 9;
 			this->label11->Text = L"1234";
 			this->label11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label11->Click += gcnew System::EventHandler(this, &game::label11_Click);
 			// 
 			// label12
 			// 
@@ -334,7 +303,6 @@ namespace Project11 {
 			this->label12->TabIndex = 10;
 			this->label12->Text = L"1234";
 			this->label12->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label12->Click += gcnew System::EventHandler(this, &game::label12_Click);
 			// 
 			// label13
 			// 
@@ -353,7 +321,6 @@ namespace Project11 {
 			this->label13->TabIndex = 11;
 			this->label13->Text = L"1234";
 			this->label13->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label13->Click += gcnew System::EventHandler(this, &game::label13_Click);
 			// 
 			// label14
 			// 
@@ -372,7 +339,6 @@ namespace Project11 {
 			this->label14->TabIndex = 12;
 			this->label14->Text = L"1234";
 			this->label14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label14->Click += gcnew System::EventHandler(this, &game::label14_Click);
 			// 
 			// label15
 			// 
@@ -391,7 +357,6 @@ namespace Project11 {
 			this->label15->TabIndex = 13;
 			this->label15->Text = L"1234";
 			this->label15->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label15->Click += gcnew System::EventHandler(this, &game::label15_Click);
 			// 
 			// label16
 			// 
@@ -410,7 +375,6 @@ namespace Project11 {
 			this->label16->TabIndex = 14;
 			this->label16->Text = L"1234";
 			this->label16->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label16->Click += gcnew System::EventHandler(this, &game::label16_Click);
 			// 
 			// label17
 			// 
@@ -429,7 +393,6 @@ namespace Project11 {
 			this->label17->TabIndex = 15;
 			this->label17->Text = L"1234";
 			this->label17->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label17->Click += gcnew System::EventHandler(this, &game::label17_Click);
 			// 
 			// game
 			// 
@@ -448,217 +411,127 @@ namespace Project11 {
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 		bool p = false;
 		const int N = 4;
 		int score = 0;
 		static array<int, 2>^ matrix = gcnew array<int, 2>(4, 4);
-		int upKeyPressed(cli::array<int, 2>^, int onlyCheck)
-		{
+		int upKeyPressed(cli::array<int, 2>^, int onlyCheck){
 			int didAction = 0;
-			for (int i = 0; i < N; i++) //do algorythm for all colums
-			{
-				for (int j = 0; j < N; j++) // go through all rows
-				{
-					if (matrix[j, i] == 0) // found first free cell
-					{
-						for (int k = j + 1; k < N; k++) // take a look for not free cells down
-						{
-							if (matrix[k, i] != 0) // found not free cell
-							{
-								// swap it with free
-								if (!onlyCheck)
-								{
+			for (int i = 0; i < N; i++) {//выполнение алгоритма для всех столбцов
+				for (int j = 0; j < N; j++) { // проход по всем строкам
+					if (matrix[j, i] == 0) { // поиск первой свободной ячейки
+						for (int k = j + 1; k < N; k++) { // Просмотр всех свободных ячеек
+							if (matrix[k, i] != 0) { // найдена заполненная ячейка
+								// замена его на свободный
+								if (!onlyCheck){
 									matrix[j, i] = matrix[k, i];
 									matrix[k, i] = 0;
 								}
 								didAction = 1;
 								break;
-							}
-						}
-					}
-				}
-				// sum same neibour elements
-				for (int j = 0; j < N - 1; j++)
-				{
-					if (matrix[j, i] == matrix[j + 1, i] && matrix[j, i] != 0)
-					{
+							} } } }
+				// суммирование элементов
+				for (int j = 0; j < N - 1; j++) {
+					if (matrix[j, i] == matrix[j + 1, i] && matrix[j, i] != 0) {
 						didAction = 1;
-						if (!onlyCheck)
-						{
+						if (!onlyCheck) {
 							matrix[j, i] *= 2;
 							score += matrix[j, i];
 							matrix[j + 1, i] = 0;
-							for (int k = j + 2; k < N; k++) // take up elements in down
-							{
+							for (int k = j + 2; k < N; k++) {
 								matrix[k - 1, i] = matrix[k, i];
 								matrix[k, i] = 0;
-							}
-						}
-					}
-				}
-			}
+							} } } } }
 			return didAction;
 		}
-
-		int downKeyPressed(cli::array<int, 2>^, int onlyCheck)
-		{
+		int downKeyPressed(cli::array<int, 2>^, int onlyCheck) {
 			int didAction = 0;
-			for (int i = 0; i < N; i++) //do algorythm for all colums
-			{
-				for (int j = N - 1; j >= 0; j--) // go through all rows from down to up
-				{
-					if (matrix[j, i] == 0) // found first free cell
-					{
-						for (int k = j - 1; k >= 0; k--) // take a look for not free cells up
-						{
-							if (matrix[k, i] != 0) // found not free cell
-							{
-								// swap it with free
-								if (!onlyCheck)
-								{
+			for (int i = 0; i < N; i++) {
+				for (int j = N - 1; j >= 0; j--) {
+					if (matrix[j, i] == 0) {
+						for (int k = j - 1; k >= 0; k--) {
+							if (matrix[k, i] != 0) {
+								if (!onlyCheck){
 									matrix[j, i] = matrix[k, i];
 									matrix[k, i] = 0;
 								}
 								didAction = 1;
 								break;
-							}
-						}
-					}
-				}
-				// sum same neibour elements
-				for (int j = N - 1; j >= 1; j--)
-				{
-					if (matrix[j, i] == matrix[j - 1, i] && matrix[j, i] != 0)
-					{
+							} } } }
+				for (int j = N - 1; j >= 1; j--) {
+					if (matrix[j, i] == matrix[j - 1, i] && matrix[j, i] != 0){
 						didAction = 1;
-						if (!onlyCheck)
-						{
+						if (!onlyCheck){
 							matrix[j, i] *= 2;
 							score += matrix[j, i];
 							matrix[j - 1, i] = 0;
-							for (int k = j - 2; k >= 0; k--) // take up elements in down
-							{
+							for (int k = j - 2; k >= 0; k--) {
 								matrix[k + 1, i] = matrix[k, i];
 								matrix[k, i] = 0;
-							}
-						}
-					}
-				}
-			}
+							} } } } }
 			return didAction;
 		}
-
-		int leftKeyPressed(cli::array<int, 2>^, int onlyCheck)
-		{
+		int leftKeyPressed(cli::array<int, 2>^, int onlyCheck){
 			int didAction = 0;
-			for (int i = 0; i < N; i++) //do algorythm for all rows
-			{
-				for (int j = 0; j < N; j++) // go through all columns
-				{
-					if (matrix[i, j] == 0) // found first free cell
-					{
-						for (int k = j + 1; k < N; k++) // take a look for not free cells on the right
-						{
-							if (matrix[i, k] != 0) // found not free cell
-							{
-								// swap it with free
-								if (!onlyCheck)
-								{
+			for (int i = 0; i < N; i++) {
+				for (int j = 0; j < N; j++) {
+					if (matrix[i, j] == 0) {
+						for (int k = j + 1; k < N; k++) {
+							if (matrix[i, k] != 0) {
+								if (!onlyCheck){
 									matrix[i, j] = matrix[i, k];
 									matrix[i, k] = 0;
 								}
 								didAction = 1;
 								break;
-							}
-						}
-					}
-				}
-				// sum same neibour elements
-				for (int j = 0; j < N - 1; j++)
-				{
-					if (matrix[i, j] == matrix[i, j + 1] && matrix[i, j] != 0)
-					{
+							} } } }
+				for (int j = 0; j < N - 1; j++) {
+					if (matrix[i, j] == matrix[i, j + 1] && matrix[i, j] != 0) {
 						didAction = 1;
-						if (!onlyCheck)
-						{
+						if (!onlyCheck) {
 							matrix[i, j] *= 2;
 							score += matrix[i, j];
 							matrix[i, j + 1] = 0;
-							for (int k = j + 2; k < N; k++) // take up elements in down
-							{
+							for (int k = j + 2; k < N; k++) {
 								matrix[i, k - 1] = matrix[i, k];
 								matrix[i, k] = 0;
-							}
-						}
-					}
-				}
-			}
+							} } } } }
 			return didAction;
 		}
-
-
-		int rightKeyPressed(cli::array<int, 2>^, int onlyCheck)
-		{
+		int rightKeyPressed(cli::array<int, 2>^, int onlyCheck) {
 			int didAction = 0;
-			for (int i = 0; i < N; i++) //do algorythm for all row
-			{
-				for (int j = N - 1; j >= 0; j--) // go through all colums from right to left
-				{
-					if (matrix[i, j] == 0) // found first free cell
-					{
-						for (int k = j - 1; k >= 0; k--) // take a look for not free cells left
-						{
-							if (matrix[i, k] != 0) // found not free cell
-							{
-								// swap it with free
-								if (!onlyCheck)
-								{
+			for (int i = 0; i < N; i++) {
+				for (int j = N - 1; j >= 0; j--) {
+					if (matrix[i, j] == 0) {
+						for (int k = j - 1; k >= 0; k--) {
+							if (matrix[i, k] != 0) {
+								if (!onlyCheck){
 									matrix[i, j] = matrix[i, k];
 									matrix[i, k] = 0;
 								}
-
 								didAction = 1;
 								break;
-							}
-						}
-					}
-				}
-				// sum same neibour elements
-				for (int j = N - 1; j >= 1; j--)
-				{
-					if (matrix[i, j] == matrix[i, j - 1] && matrix[i, j] != 0)
-					{
+							} } } }
+				for (int j = N - 1; j >= 1; j--){
+					if (matrix[i, j] == matrix[i, j - 1] && matrix[i, j] != 0){
 						didAction = 1;
-						if (!onlyCheck)
-						{
+						if (!onlyCheck){
 							matrix[i, j] *= 2;
 							score += matrix[i, j];
 							matrix[i, j - 1] = 0;
-							for (int k = j - 2; k >= 0; k--) // take up elements in down
-							{
+							for (int k = j - 2; k >= 0; k--){
 								matrix[i, k + 1] = matrix[i, k];
 								matrix[i, k] = 0;
-							}
-						}
-
-					}
-				}
-			}
+							} } } } }
 			return didAction;
 		}
-
-		void printMatix(cli::array<int, 2>^)
-		{
-			for (int i = 0; i < N; i++)
-			{
-				for (int j = 0; j < N; j++)
-				{
+		void printMatix(cli::array<int, 2>^){
+			for (int i = 0; i < N; i++){
+				for (int j = 0; j < N; j++){
 					Control^ c = tableLayoutPanel1->GetControlFromPosition(j, i);
-					if (matrix[i, j] != 0)
-					{
+					if (matrix[i, j] != 0){
 						c->Text = matrix[i, j].ToString();
 						if (matrix[i, j] <= 4)
 							c->ForeColor = ColorTranslator::FromHtml("#776e65");
@@ -678,38 +551,26 @@ namespace Project11 {
 						if (matrix[i, j] >= 128)
 							c->BackColor = ColorTranslator::FromHtml("#edcf72");
 					}
-
-					else
-					{
+					else{
 						c->Text = "";
 						c->BackColor = ColorTranslator::FromHtml("#ffda8a");
 					}
-
 					label1->Text = "Счёт : " + score.ToString();
-				}
-			}
-
-		}
-		void spawnNewItem(cli::array<int, 2>^)
-		{
+				} } }
+		void spawnNewItem(cli::array<int, 2>^) {
 			int r1, r2;
 			do {
 				r1 = rand() % N;
 				r2 = rand() % N;
 			} while (matrix[r1, r2] != 0);
-
 			matrix[r1, r2] = 2;
 		}
-
-		int userLost(cli::array<int, 2>^)
-		{
+		int userLost(cli::array<int, 2>^) {
 			if (!upKeyPressed(matrix, 1) && !downKeyPressed(matrix, 1) && !leftKeyPressed(matrix, 1) && !rightKeyPressed(matrix, 1))
 				return 1;
 			else return 0;
 		}
-
-		void startNewGame(cli::array<int, 2>^)
-		{
+		void startNewGame(cli::array<int, 2>^) {
 			for (int i = 0; i < N; i++)
 				for (int j = 0; j < N; j++)
 					matrix[i, j] = 0;
@@ -717,31 +578,24 @@ namespace Project11 {
 			printMatix(matrix);
 			score = 0;
 		}
-
 	private: System::Void game_Load(System::Object^ sender, System::EventArgs^ e) {
-
 		srand(time(NULL));
 		startNewGame(matrix);
 		this->BackColor = ColorTranslator::FromHtml("#ffda8a");
-
 	}
 	private: System::Void game_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-		if (userLost(matrix))
-		{
+		if (userLost(matrix)) {
 			String^ message = "Хотите сыграть снова?";
 			String^ caption = "Вы проиграли :(";
 			MessageBoxButtons buttons = MessageBoxButtons::YesNo;
 			System::Windows::Forms::DialogResult result = MessageBox::Show(message, caption, buttons);
-
 			if (result == System::Windows::Forms::DialogResult::Yes)
 				startNewGame(matrix);
 			if (result == System::Windows::Forms::DialogResult::No)
 				this->Hide();
 		}
-
 		int didAction = 0;
-		switch (e->KeyCode)
-		{
+		switch (e->KeyCode){
 		case Keys::Up: didAction = upKeyPressed(matrix, 0); break;
 		case Keys::Down: didAction = downKeyPressed(matrix, 0); break;
 		case Keys::Left: didAction = leftKeyPressed(matrix, 0); break;
@@ -749,42 +603,7 @@ namespace Project11 {
 		};
 		if (didAction)
 			spawnNewItem(matrix);
-
-
 		printMatix(matrix);
-	}
-
-	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label11_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label13_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label17_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label16_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label15_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label14_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }

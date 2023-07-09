@@ -1,5 +1,4 @@
 #pragma once
-
 namespace Project11 {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -121,7 +120,6 @@ namespace Project11 {
 			this->label3->Size = System::Drawing::Size(165, 20);
 			this->label3->TabIndex = 7;
 			this->label3->Text = L"Демо пароль: 1234";
-			// 
 			// Form_admin
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -143,9 +141,9 @@ namespace Project11 {
 			this->Text = L"Form_admin";
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
+// Функция кнопки режима администратора
 	private: System::Void button_admin_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->button_player->BackColor = System::Drawing::SystemColors::Control;
 		this->button_admin->BackColor = System::Drawing::Color::LightBlue;
@@ -154,6 +152,7 @@ namespace Project11 {
 		label2->Visible = true;
 		button_enter_player->Visible = false;
 	}
+// Функция кнопки режима пользователя
 private: System::Void button_player_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->button_admin->BackColor = System::Drawing::SystemColors::Control;
 	this->button_player->BackColor = System::Drawing::Color::LightBlue;
@@ -162,6 +161,7 @@ private: System::Void button_player_Click(System::Object^ sender, System::EventA
 	label2->Visible = false;
 	button_enter_player->Visible = true;
 }
+//Функция кнопки входа в режим администратора
 private: System::Void button_enter_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ password = "1234";
 	if (textBox1->Text == password) {
@@ -176,6 +176,7 @@ private: System::Void button_enter_Click(System::Object^ sender, System::EventAr
 		}
 		else MessageBox::Show("Введите пароль!");
 	} }
+// Функция кнопки входа в режим пользователя
 private: System::Void button_enter_player_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 	this->Close();

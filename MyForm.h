@@ -22,8 +22,6 @@ namespace Project11 {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker_add;
 	private: System::Windows::Forms::TextBox^ textBox_add_name;
 	private: System::Windows::Forms::ToolStripMenuItem^ открытьФайлToolStripMenuItem;
-
-
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::GroupBox^ groupBox_add;
 	private: System::Windows::Forms::ToolStripMenuItem^ сохранитьToolStripMenuItem;
@@ -683,10 +681,10 @@ namespace Project11 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_add_cond))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 		int redact = 0;
+// Функция добавления строки
 private: System::Void button_add_Click(System::Object^ sender, System::EventArgs^ e) {
 	redact = 0;
 	int i = dataGridView1->Rows->Count;
@@ -694,9 +692,11 @@ private: System::Void button_add_Click(System::Object^ sender, System::EventArgs
 	label_podskazka->Text = "Подсказка";
 	label_podskazka_text->Text = "Строка товара успешно добавлена!";
 }
+// Функция закрытия всей программы
 private: System::Void MyForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
 	Application::Exit();
 }
+// Функция перехода в режим добавления
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	clear_add_stroke();
 	this->button4->BackColor = System::Drawing::Color::LightBlue;
@@ -709,6 +709,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	numericUpDown_numstrok->Visible = false;
 	label_numstrok->Visible = false;
 }
+// Функция перехода в режим редактирования
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (dataGridView1->Rows->Count != 0) {
 		this->button1->BackColor = System::Drawing::Color::LightBlue;
@@ -732,6 +733,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			System::String^ filePath = openFileDialog1->FileName;
 		this->BackgroundImage = Image::FromFile(filePath);
 	} }
+// Функция сохранения данных в файл
 private: System::Void сохранитьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Фильтр только для .txt
 	saveFileDialog1->Title = "Сохранить как";
@@ -746,6 +748,7 @@ private: System::Void сохранитьToolStripMenuItem_Click(System::Object^ 
 		sw->Close();
 		MessageBox::Show("Файл успешно сохранен");
 	} }
+// Функция открытия файла
 private: System::Void открытьToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	openFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Фильтр только для .txt
 	openFileDialog1->Title = "Открыть";
@@ -760,6 +763,7 @@ private: System::Void открытьToolStripMenuItem_Click(System::Object^ send
 		sr->Close();
 		MessageBox::Show("Файл успешно загружен");
 	} }
+// Функции показа подсказок при нажатии на поля ввода
 private: System::Void numericUpDown_add_cond_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	label_podskazka->Text = "Состояние товара";
 	label_podskazka_text->Text = "0 - Плохое\n1 - Среднее\n2 - Отличное";
@@ -788,6 +792,8 @@ private: System::Void numericUpDown_numstrok_Enter(System::Object^ sender, Syste
 	label_podskazka->Text = "Подсказка";
 	label_podskazka_text->Text = "Сначала выберите номер строки!";
 }
+//
+// Функция смены номера строки редактирования
 private: System::Void numericUpDown_numstrok_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (numericUpDown_numstrok->Value != 0) {
 		if (redact = 1) {
@@ -799,6 +805,7 @@ private: System::Void numericUpDown_numstrok_ValueChanged(System::Object^ sender
 			domainUpDown1->Text = System::Convert::ToString(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[4]->Value);
 			numericUpDown_add_cena->Value = System::Convert::ToInt32(dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[3]->Value);
 		} } }
+// Функция кнопки редактирования строк
 private: System::Void button_redact_Click(System::Object^ sender, System::EventArgs^ e) {
 	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[1]->Value = textBox_add_name->Text;
 	dataGridView1->Rows[System::Convert::ToInt32(numericUpDown_numstrok->Value) - 1]->Cells[2]->Value = numericUpDown_add_cond->Value;
@@ -810,6 +817,7 @@ private: System::Void button_redact_Click(System::Object^ sender, System::EventA
 	label_podskazka->Text = "Подсказка";
 	label_podskazka_text->Text = "Данные строки успешно изменены!";
 }
+// Передача индекса выбранной строки в textbox номера строки
 private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	// Получаем индекс выбранной строки
 	int rowIndex = e->RowIndex;
@@ -820,6 +828,7 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 		numericUpDown_numstrok->Value = System::Convert::ToInt32(cellValue);
 	}
 }
+// функция очистки полей ввода
 private: System::Void clear_add_stroke() {
 	textBox_add_name->Text = "";
 	numericUpDown_add_cond->Value = 0;
@@ -829,14 +838,17 @@ private: System::Void clear_add_stroke() {
 	maskedTextBox_add_passport->Text = "";
 	numericUpDown_add_srok->Value = 1;
 }
+// функция кнопки очистки полей ввода
 private: System::Void button_erase_Click(System::Object^ sender, System::EventArgs^ e) {
 	clear_add_stroke();
 }
+// Пересчёт строк при удалении строки
 private: System::Void dataGridView1_UserDeletedRow(System::Object^ sender, System::Windows::Forms::DataGridViewRowEventArgs^ e) {
 	for (int i = 0; i < dataGridView1->Rows->Count; i++) {
 		dataGridView1->Rows[i]->Cells[0]->Value = i + 1;
 	}
 }
+// Функция очистки списка
 private: System::Void очиститьСписокToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	Formdeletedata^ form_delete = gcnew Formdeletedata();
 	form_delete->TextBoxValue = "Это действие удалить все данные списка. Вы уверены?";
@@ -850,6 +862,7 @@ private: System::Void очиститьСписокToolStripMenuItem_Click(System
 		dataGridView1->Refresh();
 		MessageBox::Show("Список успешно очищен!");
 	} }
+// Функция кнопки запрос и передача данных списка
 public: System::Void button_zapros_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (dataGridView1->Rows->Count != 0) {
 		Form_zapros^ form_zapros = gcnew Form_zapros();
@@ -871,6 +884,7 @@ public: System::Void button_zapros_Click(System::Object^ sender, System::EventAr
 	else {
 		MessageBox::Show("Список с товарами пуст!"); 
 	}}
+// Функция смены режима использования
 private: System::Void сменитьРежимИспользованияToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	Form_admin^ form_admin = gcnew Form_admin();
 	System::Windows::Forms::DialogResult result = form_admin->ShowDialog();
@@ -899,6 +913,7 @@ private: System::Void играToolStripMenuItem_Click(System::Object^ sender, Sy
 	form_game->Show();
 	form_game->TopMost = true;
 }
+// Функция перетаскивания файла
 private: System::Void dataGridView1_DragDrop(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e) {
 	// Проверяем, что перетаскиваемый объект является файлом
 	if (e->Data->GetDataPresent(DataFormats::FileDrop)) {
@@ -963,6 +978,7 @@ private: System::Void справкаToolStripMenuItem_Click(System::Object^ send
 	faq_form->Show();
 	faq_form->TopMost = true;
 }
+	// Функция диалогового окна при выходе
 	private: System::Void MyForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 		if (dataGridView1->Rows->Count != 0) {
 			if (MessageBox::Show(L"Хотите сохранить данные перед выходом?", L"Предупреждение", MessageBoxButtons::YesNo, MessageBoxIcon::Question) != System::Windows::Forms::DialogResult::No)

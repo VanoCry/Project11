@@ -9,8 +9,7 @@ namespace Project11 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Collections::Generic;
-	public ref class Form_zapros : public System::Windows::Forms::Form
-	{
+	public ref class Form_zapros : public System::Windows::Forms::Form {
 	public: Form_zapros(){InitializeComponent();}
 		/// Функция получения данных из списка главной формы
 		property DataGridView^ DataGridView1{
@@ -1022,6 +1021,7 @@ namespace Project11 {
 #pragma endregion
 	private: System::Void Form_zapros_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
+// Функция смены фона
 private: System::Void сменитьФонToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	openFileDialog1->Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF"; // Фильтр только для изображений
 	openFileDialog1->Title = "Выберите изображение";
@@ -1029,6 +1029,7 @@ private: System::Void сменитьФонToolStripMenuItem_Click(System::Object
 		System::String^ filePath = openFileDialog1->FileName;
 		this->BackgroundImage = Image::FromFile(filePath);
 	} }
+// Функции скрытия и показа полей ввода фильтров
 private: System::Void checkBox_number_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	numericUpDown1->Maximum = dataGridView1->Rows->Count;
 	numericUpDown2->Maximum = dataGridView1->Rows->Count;
@@ -1113,9 +1114,12 @@ private: System::Void checkBox_srok_CheckedChanged(System::Object^ sender, Syste
 		numericUpDown5->Visible = false;
 		numericUpDown6->Visible = false;
 	} }
+//
+// Функция выхода из формы запроса
 private: System::Void button_exit_zapros_Click(System::Object^ sender, System::EventArgs^ e) {
 	Form_zapros::Hide();
 }
+// Функция запроса по фильтрам
 private: System::Void button_zapros_Click(System::Object^ sender, System::EventArgs^ e) {
 	List<DataGridViewRow^>^ selectedRows = gcnew List<DataGridViewRow^>;
 	// Получаем количество строк и столбцов в dataGridView1
@@ -1162,6 +1166,7 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		}
 		else MessageBox::Show("Пустая строка фильтра 'Наименование'!");
 	}
+// Запрос по состоянию товара
 	if (checkBox_con->Checked) {
 		int filt_con = System::Convert::ToInt32(numericUpDown7->Text);
 		for each (DataGridViewRow ^ row in dataGridView2->Rows){
@@ -1175,6 +1180,7 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		}
 		selectedRows->Clear();
 	}
+// Запрос по номеру паспорта
 	if (checkBox_passport->Checked) {
 		String^ filt_passport = System::Convert::ToString(maskedTextBox1->Text);
 		if (filt_passport != "") {
@@ -1191,11 +1197,11 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		}
 		else MessageBox::Show("Пустая строка фильтра 'Паспортные данные'!");
 	}
+// Запрос по сроку хранения
 	if (checkBox_srok->Checked) {
 		int srok_ot = System::Convert::ToInt32(numericUpDown5->Value);
 		int srok_do = System::Convert::ToInt32(numericUpDown6->Value);
-		for each (DataGridViewRow ^ row in dataGridView2->Rows)
-		{
+		for each (DataGridViewRow ^ row in dataGridView2->Rows){
 			int srok = System::Convert::ToInt32(row->Cells[7]->Value);
 			if (srok < srok_ot || srok > srok_do) {
 				selectedRows->Add(row);
@@ -1206,6 +1212,7 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		}
 		selectedRows->Clear();
 	}
+// Запрос по дате добавления
 	if (checkBox_date->Checked) {
 		DateTime date_ot = dateTimePicker1->Value.Date;
 		DateTime date_do = dateTimePicker2->Value.Date;
@@ -1229,6 +1236,7 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		}
 		selectedRows->Clear();
 	}
+// Запрос по валюте
 	if (checkBox_valuta->Checked) {
 		String^ filt_valuta = System::Convert::ToString(domainUpDown3->SelectedItem);
 		for each (DataGridViewRow ^ row in dataGridView2->Rows){
@@ -1240,6 +1248,7 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		}
 		selectedRows->Clear();
 	}
+// запрос по цене
 	if (checkBox_cena->Checked) {
 		int cena_filt = System::Convert::ToInt32(numericUpDown3->Value);
 		for each (DataGridViewRow ^ row in dataGridView2->Rows){
@@ -1256,12 +1265,14 @@ private: System::Void button_zapros_Click(System::Object^ sender, System::EventA
 		for each (DataGridViewRow ^ row in selectedRows) {
 			dataGridView2->Rows->Remove(row);
 		} } }
+// Функции минимальных значений полей номера
 private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	numericUpDown2->Minimum = numericUpDown1->Value;
 }
 private: System::Void numericUpDown5_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 	numericUpDown6->Minimum = numericUpDown5->Value;
 }
+// Функция скрытия и показа полей ввода дат
 private: System::Void domainUpDown2_SelectedItemChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (domainUpDown2->SelectedItem == L"Промежуток") {
 		label7->Text = "От";
@@ -1292,11 +1303,13 @@ private: System::Void domainUpDown2_SelectedItemChanged(System::Object^ sender, 
 		dateTimePicker2->Visible = false;
 	}
 }
+// Функция скрытия и показа поля ввода валют
 private: System::Void checkBox_valuta_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	domainUpDown3->SelectedItem = L"₽";
 	if (checkBox_valuta->Checked) domainUpDown3->Visible = true;
 	else domainUpDown3->Visible = false;
 }
+// Функция очистки фильтров
 private: System::Void button_clear_Click(System::Object^ sender, System::EventArgs^ e) {
 	numericUpDown1->Value = 1;
 	numericUpDown2->Value = 1;
@@ -1317,6 +1330,7 @@ private: System::Void button_clear_Click(System::Object^ sender, System::EventAr
 	checkBox_passport->Checked = false;
 	checkBox_srok->Checked = false;
 }
+// Функция сохранения данных запроса
 private: System::Void новыйЗапросToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"; // Фильтр только для .txt
 	saveFileDialog1->Title = "Сохранить как";
@@ -1333,11 +1347,13 @@ private: System::Void новыйЗапросToolStripMenuItem_Click(System::Obje
 		sw->Close();
 		MessageBox::Show("Файл успешно сохранен");
 	} }
+// Функция открытия игры
 private: System::Void играToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	game^ form_game = gcnew game();
 	form_game->Show();
 	form_game->TopMost = true;
 }
+// Функция открытия справки
 private: System::Void справкаToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	faq^ faq_form = gcnew faq();
 	faq_form->Show();

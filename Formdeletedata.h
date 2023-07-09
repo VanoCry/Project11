@@ -1,27 +1,14 @@
 #pragma once
-
 namespace Project11 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
-	/// <summary>
-	/// —водка дл€ Formdeletedata
-	/// </summary>
-	public ref class Formdeletedata : public System::Windows::Forms::Form
-	{
-	public:
-		Formdeletedata(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
-		}
+	public ref class Formdeletedata : public System::Windows::Forms::Form{
+	public: Formdeletedata(void){InitializeComponent();}
+// ‘ункции перемещени€ строк названи€ и textbox в форму
 		property String^ TextBoxValue {
 			String^ get() { return textBox1->Text; }
 			void set(String^ value) { textBox1->Text = value; }
@@ -30,39 +17,13 @@ namespace Project11 {
 			String^ get() { return this->Text; }
 			void set(String^ value) { this->Text = value; }
 		}
-
-	protected:
-		/// <summary>
-		/// ќсвободить все используемые ресурсы.
-		/// </summary>
-		~Formdeletedata()
-		{
-			if (components)
-			{
-				delete components;
-			}
-		}
+	protected: ~Formdeletedata(){if (components){delete components;}}
 	private: System::Windows::Forms::Button^ button_yes;
 	private: System::Windows::Forms::Button^ button_no;
 	private: System::Windows::Forms::TextBox^ textBox1;
-
-	protected:
-
-	protected:
-
-	private:
-		/// <summary>
-		/// ќб€зательна€ переменна€ конструктора.
-		/// </summary>
-		System::ComponentModel::Container ^components;
-
+	private: System::ComponentModel::Container ^components;
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// “ребуемый метод дл€ поддержки конструктора Ч не измен€йте 
-		/// содержимое этого метода с помощью редактора кода.
-		/// </summary>
-		void InitializeComponent(void)
-		{
+		void InitializeComponent(void) {
 			this->button_yes = (gcnew System::Windows::Forms::Button());
 			this->button_no = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -120,14 +81,13 @@ namespace Project11 {
 			this->Load += gcnew System::EventHandler(this, &Formdeletedata::Formdeletedata_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
+//‘ункци€ выдачи DialogResult в главную форму
 	private: System::Void button_yes_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 		this->Close();
 	}
-
 	private: System::Void button_no_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->DialogResult = System::Windows::Forms::DialogResult::OK;
 		this->Close();

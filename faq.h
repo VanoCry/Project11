@@ -211,6 +211,7 @@ namespace Project11 {
 
 		}
 #pragma endregion
+// Ôóíêöèè êíîïîê ñìåíû êàòåãîðèè ñïðàâêè
 	private: System::Void ãëàâíîåÎêíîToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		richTextBox_main->Visible = true;
 		richTextBox_zapros->Visible = false;
