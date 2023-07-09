@@ -55,6 +55,7 @@ namespace Project11 {
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(game::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -438,6 +439,7 @@ namespace Project11 {
 			this->ClientSize = System::Drawing::Size(486, 492);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"game";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"2048";

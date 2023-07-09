@@ -18,15 +18,6 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>
-    <ClCompile Include="Formdeletedata.cpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClCompile>
-    <ClCompile Include="Form_admin.cpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClCompile>
-    <ClCompile Include="game.cpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -42,6 +33,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="faq.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

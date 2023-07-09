@@ -123,12 +123,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Formdeletedata.cpp" />
-    <ClCompile Include="Form_admin.cpp" />
-    <ClCompile Include="game.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="faq.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Formdeletedata.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -146,6 +146,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="faq.resx">
+      <DependentUpon>faq.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formdeletedata.resx">
       <DependentUpon>Formdeletedata.h</DependentUpon>
     </EmbeddedResource>

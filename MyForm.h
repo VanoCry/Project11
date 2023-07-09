@@ -2,6 +2,7 @@
 #include "Form_zapros.h"
 #include "Form_admin.h"
 #include "game.h"
+#include "faq.h"
 #pragma once
 namespace Project11 {
 	using namespace System;
@@ -21,8 +22,8 @@ namespace Project11 {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker_add;
 	private: System::Windows::Forms::TextBox^ textBox_add_name;
 	private: System::Windows::Forms::ToolStripMenuItem^ открытьФайлToolStripMenuItem;
-	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ сменитьЗадниToolStripMenuItem;
+
+
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::GroupBox^ groupBox_add;
 	private: System::Windows::Forms::ToolStripMenuItem^ сохранитьToolStripMenuItem;
@@ -62,12 +63,13 @@ namespace Project11 {
 	private: System::Windows::Forms::Button^ button_zapros;
 	private: System::Windows::Forms::ToolStripMenuItem^ сменитьРежимИспользованияToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ играToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ справкаToolStripMenuItem;
 	private: System::ComponentModel::IContainer^ components;
 	private:
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void){
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_number = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -83,14 +85,13 @@ namespace Project11 {
 			this->сохранитьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->открытьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->очиститьСписокToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->сменитьРежимИспользованияToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->играToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->сменитьРежимИспользованияToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->сменитьФонToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->справкаToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button_add = (gcnew System::Windows::Forms::Button());
 			this->dateTimePicker_add = (gcnew System::Windows::Forms::DateTimePicker());
 			this->textBox_add_name = (gcnew System::Windows::Forms::TextBox());
-			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
-			this->сменитьЗадниToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->groupBox_add = (gcnew System::Windows::Forms::GroupBox());
 			this->button_erase = (gcnew System::Windows::Forms::Button());
@@ -118,14 +119,15 @@ namespace Project11 {
 			this->button_zapros = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->menuStrip1->SuspendLayout();
-			this->contextMenuStrip1->SuspendLayout();
 			this->groupBox_add->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_numstrok))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_add_srok))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_add_cena))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_add_cond))->BeginInit();
 			this->SuspendLayout();
+			// 
 			// dataGridView1
+			// 
 			this->dataGridView1->AllowDrop = true;
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
@@ -137,15 +139,15 @@ namespace Project11 {
 				this->Column_number,
 					this->Column_name, this->Column_cond, this->Column_cost, this->Column_valut, this->Column_date, this->Column_passport, this->Column_days
 			});
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle2;
 			this->dataGridView1->Location = System::Drawing::Point(61, 43);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -157,7 +159,9 @@ namespace Project11 {
 			this->dataGridView1->UserDeletedRow += gcnew System::Windows::Forms::DataGridViewRowEventHandler(this, &MyForm::dataGridView1_UserDeletedRow);
 			this->dataGridView1->DragDrop += gcnew System::Windows::Forms::DragEventHandler(this, &MyForm::dataGridView1_DragDrop);
 			this->dataGridView1->DragEnter += gcnew System::Windows::Forms::DragEventHandler(this, &MyForm::dataGridView1_DragEnter);
+			// 
 			// Column_number
+			// 
 			this->Column_number->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->Column_number->HeaderText = L" №";
 			this->Column_number->MinimumWidth = 6;
@@ -165,54 +169,71 @@ namespace Project11 {
 			this->Column_number->ReadOnly = true;
 			this->Column_number->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 			this->Column_number->Width = 70;
+			// 
 			// Column_name
+			// 
 			this->Column_name->FillWeight = 55.89743F;
 			this->Column_name->HeaderText = L" Наименование товара";
 			this->Column_name->MinimumWidth = 6;
 			this->Column_name->Name = L"Column_name";
 			this->Column_name->ReadOnly = true;
+			// 
 			// Column_cond
+			// 
 			this->Column_cond->FillWeight = 20;
 			this->Column_cond->HeaderText = L"Состояние товара";
 			this->Column_cond->MinimumWidth = 6;
 			this->Column_cond->Name = L"Column_cond";
 			this->Column_cond->ReadOnly = true;
+			// 
 			// Column_cost
+			// 
 			this->Column_cost->FillWeight = 35.89743F;
 			this->Column_cost->HeaderText = L"Оценочная стоимость";
 			this->Column_cost->MinimumWidth = 6;
 			this->Column_cost->Name = L"Column_cost";
 			this->Column_cost->ReadOnly = true;
+			// 
 			// Column_valut
+			// 
 			this->Column_valut->FillWeight = 15.89743F;
 			this->Column_valut->HeaderText = L"Валюта";
 			this->Column_valut->MinimumWidth = 6;
 			this->Column_valut->Name = L"Column_valut";
 			this->Column_valut->ReadOnly = true;
+			// 
 			// Column_date
+			// 
 			this->Column_date->FillWeight = 20.89743F;
 			this->Column_date->HeaderText = L"Дата сдачи";
 			this->Column_date->MinimumWidth = 6;
 			this->Column_date->Name = L"Column_date";
 			this->Column_date->ReadOnly = true;
+			// 
 			// Column_passport
+			// 
 			this->Column_passport->FillWeight = 25.89743F;
 			this->Column_passport->HeaderText = L"Паспортные данные";
 			this->Column_passport->MinimumWidth = 6;
 			this->Column_passport->Name = L"Column_passport";
 			this->Column_passport->ReadOnly = true;
+			// 
 			// Column_days
+			// 
 			this->Column_days->FillWeight = 15.89743F;
 			this->Column_days->HeaderText = L"Срок хранения";
 			this->Column_days->MinimumWidth = 6;
 			this->Column_days->Name = L"Column_days";
 			this->Column_days->ReadOnly = true;
+			// 
 			// menuStrip1
+			// 
 			this->menuStrip1->BackColor = System::Drawing::Color::Honeydew;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
 				this->открытьФайлToolStripMenuItem,
-					this->очиститьСписокToolStripMenuItem, this->играToolStripMenuItem, this->сменитьРежимИспользованияToolStripMenuItem, this->сменитьФонToolStripMenuItem
+					this->очиститьСписокToolStripMenuItem, this->играToolStripMenuItem, this->сменитьРежимИспользованияToolStripMenuItem, this->сменитьФонToolStripMenuItem,
+					this->справкаToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -220,7 +241,9 @@ namespace Project11 {
 			this->menuStrip1->Size = System::Drawing::Size(1540, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
+			// 
 			// открытьФайлToolStripMenuItem
+			// 
 			this->открытьФайлToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->сохранитьToolStripMenuItem,
 					this->открытьToolStripMenuItem
@@ -228,39 +251,62 @@ namespace Project11 {
 			this->открытьФайлToolStripMenuItem->Name = L"открытьФайлToolStripMenuItem";
 			this->открытьФайлToolStripMenuItem->Size = System::Drawing::Size(59, 24);
 			this->открытьФайлToolStripMenuItem->Text = L"Файл";
+			// 
 			// сохранитьToolStripMenuItem
+			// 
 			this->сохранитьToolStripMenuItem->Name = L"сохранитьToolStripMenuItem";
 			this->сохранитьToolStripMenuItem->Size = System::Drawing::Size(192, 26);
 			this->сохранитьToolStripMenuItem->Text = L"Сохранить как";
 			this->сохранитьToolStripMenuItem->Visible = false;
 			this->сохранитьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сохранитьToolStripMenuItem_Click);
+			// 
 			// открытьToolStripMenuItem
+			// 
 			this->открытьToolStripMenuItem->Name = L"открытьToolStripMenuItem";
 			this->открытьToolStripMenuItem->Size = System::Drawing::Size(192, 26);
 			this->открытьToolStripMenuItem->Text = L"Открыть";
 			this->открытьToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::открытьToolStripMenuItem_Click);
+			// 
 			// очиститьСписокToolStripMenuItem
+			// 
 			this->очиститьСписокToolStripMenuItem->Name = L"очиститьСписокToolStripMenuItem";
 			this->очиститьСписокToolStripMenuItem->Size = System::Drawing::Size(139, 24);
 			this->очиститьСписокToolStripMenuItem->Text = L"Очистить список";
 			this->очиститьСписокToolStripMenuItem->Visible = false;
 			this->очиститьСписокToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::очиститьСписокToolStripMenuItem_Click);
-			// сменитьРежимИспользованияToolStripMenuItem
-			this->сменитьРежимИспользованияToolStripMenuItem->Name = L"сменитьРежимИспользованияToolStripMenuItem";
-			this->сменитьРежимИспользованияToolStripMenuItem->Size = System::Drawing::Size(247, 24);
-			this->сменитьРежимИспользованияToolStripMenuItem->Text = L"Сменить режим использования";
-			this->сменитьРежимИспользованияToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сменитьРежимИспользованияToolStripMenuItem_Click);
+			// 
 			// играToolStripMenuItem
+			// 
 			this->играToolStripMenuItem->Name = L"играToolStripMenuItem";
 			this->играToolStripMenuItem->Size = System::Drawing::Size(57, 24);
 			this->играToolStripMenuItem->Text = L"Игра";
 			this->играToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::играToolStripMenuItem_Click);
+			// 
+			// сменитьРежимИспользованияToolStripMenuItem
+			// 
+			this->сменитьРежимИспользованияToolStripMenuItem->Name = L"сменитьРежимИспользованияToolStripMenuItem";
+			this->сменитьРежимИспользованияToolStripMenuItem->Size = System::Drawing::Size(247, 24);
+			this->сменитьРежимИспользованияToolStripMenuItem->Text = L"Сменить режим использования";
+			this->сменитьРежимИспользованияToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сменитьРежимИспользованияToolStripMenuItem_Click);
+			// 
 			// сменитьФонToolStripMenuItem
+			// 
 			this->сменитьФонToolStripMenuItem->Name = L"сменитьФонToolStripMenuItem";
 			this->сменитьФонToolStripMenuItem->Size = System::Drawing::Size(115, 24);
 			this->сменитьФонToolStripMenuItem->Text = L"Сменить фон";
 			this->сменитьФонToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::сменитьФонToolStripMenuItem_Click);
+			// 
+			// справкаToolStripMenuItem
+			// 
+			this->справкаToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"справкаToolStripMenuItem.Image")));
+			this->справкаToolStripMenuItem->Name = L"справкаToolStripMenuItem";
+			this->справкаToolStripMenuItem->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->справкаToolStripMenuItem->Size = System::Drawing::Size(101, 24);
+			this->справкаToolStripMenuItem->Text = L"Справка";
+			this->справкаToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::справкаToolStripMenuItem_Click);
+			// 
 			// button_add
+			// 
 			this->button_add->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_add.BackgroundImage")));
 			this->button_add->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_add->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
@@ -272,7 +318,9 @@ namespace Project11 {
 			this->toolTip1->SetToolTip(this->button_add, L"Добавить товар");
 			this->button_add->UseVisualStyleBackColor = true;
 			this->button_add->Click += gcnew System::EventHandler(this, &MyForm::button_add_Click);
+			// 
 			// dateTimePicker_add
+			// 
 			this->dateTimePicker_add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->dateTimePicker_add->Format = System::Windows::Forms::DateTimePickerFormat::Short;
@@ -282,7 +330,9 @@ namespace Project11 {
 			this->dateTimePicker_add->Size = System::Drawing::Size(213, 30);
 			this->dateTimePicker_add->TabIndex = 13;
 			this->dateTimePicker_add->Enter += gcnew System::EventHandler(this, &MyForm::dateTimePicker_add_MouseEnter);
+			// 
 			// textBox_add_name
+			// 
 			this->textBox_add_name->BackColor = System::Drawing::Color::White;
 			this->textBox_add_name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -292,16 +342,9 @@ namespace Project11 {
 			this->textBox_add_name->Size = System::Drawing::Size(289, 30);
 			this->textBox_add_name->TabIndex = 7;
 			this->textBox_add_name->Enter += gcnew System::EventHandler(this, &MyForm::textBox1_TextChanged);
-			// contextMenuStrip1
-			this->contextMenuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->contextMenuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->сменитьЗадниToolStripMenuItem });
-			this->contextMenuStrip1->Name = L"contextMenuStrip1";
-			this->contextMenuStrip1->Size = System::Drawing::Size(229, 28);
-			// сменитьЗадниToolStripMenuItem
-			this->сменитьЗадниToolStripMenuItem->Name = L"сменитьЗадниToolStripMenuItem";
-			this->сменитьЗадниToolStripMenuItem->Size = System::Drawing::Size(228, 24);
-			this->сменитьЗадниToolStripMenuItem->Text = L" Сменить задний фон";
+			// 
 			// button4
+			// 
 			this->button4->BackColor = System::Drawing::Color::LightBlue;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button4->Location = System::Drawing::Point(1347, 567);
@@ -313,7 +356,9 @@ namespace Project11 {
 			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Visible = false;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
 			// groupBox_add
+			// 
 			this->groupBox_add->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->groupBox_add->Controls->Add(this->button_erase);
 			this->groupBox_add->Controls->Add(this->label_numstrok);
@@ -346,7 +391,9 @@ namespace Project11 {
 			this->groupBox_add->TabStop = false;
 			this->groupBox_add->Text = L"Добавить товар";
 			this->groupBox_add->Visible = false;
+			// 
 			// button_erase
+			// 
 			this->button_erase->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_erase.BackgroundImage")));
 			this->button_erase->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_erase->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
@@ -358,7 +405,9 @@ namespace Project11 {
 			this->toolTip1->SetToolTip(this->button_erase, L"Очистить поля ввода");
 			this->button_erase->UseVisualStyleBackColor = true;
 			this->button_erase->Click += gcnew System::EventHandler(this, &MyForm::button_erase_Click);
+			// 
 			// label_numstrok
+			// 
 			this->label_numstrok->AutoSize = true;
 			this->label_numstrok->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
@@ -370,7 +419,9 @@ namespace Project11 {
 			this->label_numstrok->TabIndex = 30;
 			this->label_numstrok->Text = L"Номер строки";
 			this->label_numstrok->Visible = false;
+			// 
 			// numericUpDown_numstrok
+			// 
 			this->numericUpDown_numstrok->BackColor = System::Drawing::Color::SkyBlue;
 			this->numericUpDown_numstrok->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
@@ -385,7 +436,9 @@ namespace Project11 {
 			this->numericUpDown_numstrok->Visible = false;
 			this->numericUpDown_numstrok->ValueChanged += gcnew System::EventHandler(this, &MyForm::numericUpDown_numstrok_ValueChanged);
 			this->numericUpDown_numstrok->Enter += gcnew System::EventHandler(this, &MyForm::numericUpDown_numstrok_Enter);
+			// 
 			// button_redact
+			// 
 			this->button_redact->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button_redact.BackgroundImage")));
 			this->button_redact->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button_redact->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
@@ -398,7 +451,9 @@ namespace Project11 {
 			this->button_redact->UseVisualStyleBackColor = true;
 			this->button_redact->Visible = false;
 			this->button_redact->Click += gcnew System::EventHandler(this, &MyForm::button_redact_Click);
+			// 
 			// label_podskazka_text
+			// 
 			this->label_podskazka_text->AutoSize = true;
 			this->label_podskazka_text->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
@@ -407,7 +462,9 @@ namespace Project11 {
 			this->label_podskazka_text->Size = System::Drawing::Size(332, 20);
 			this->label_podskazka_text->TabIndex = 27;
 			this->label_podskazka_text->Text = L"Вы попали в поле добавления строки.";
+			// 
 			// label_podskazka
+			// 
 			this->label_podskazka->AutoSize = true;
 			this->label_podskazka->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -416,7 +473,9 @@ namespace Project11 {
 			this->label_podskazka->Size = System::Drawing::Size(109, 20);
 			this->label_podskazka->TabIndex = 26;
 			this->label_podskazka->Text = L"Подсказка";
+			// 
 			// numericUpDown_add_srok
+			// 
 			this->numericUpDown_add_srok->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_add_srok->Location = System::Drawing::Point(329, 182);
@@ -428,7 +487,9 @@ namespace Project11 {
 			this->numericUpDown_add_srok->TabIndex = 25;
 			this->numericUpDown_add_srok->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown_add_srok->Enter += gcnew System::EventHandler(this, &MyForm::numericUpDown_add_srok_ValueChanged);
+			// 
 			// maskedTextBox_add_passport
+			// 
 			this->maskedTextBox_add_passport->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->maskedTextBox_add_passport->Location = System::Drawing::Point(329, 116);
@@ -439,7 +500,9 @@ namespace Project11 {
 			this->maskedTextBox_add_passport->TabIndex = 24;
 			this->maskedTextBox_add_passport->ValidatingType = System::Int32::typeid;
 			this->maskedTextBox_add_passport->Enter += gcnew System::EventHandler(this, &MyForm::maskedTextBox_add_passport_MaskInputRejected);
+			// 
 			// domainUpDown1
+			// 
 			this->domainUpDown1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->domainUpDown1->Items->Add(L"₽");
@@ -454,7 +517,9 @@ namespace Project11 {
 			this->domainUpDown1->TabIndex = 23;
 			this->domainUpDown1->Text = L"₽";
 			this->domainUpDown1->Enter += gcnew System::EventHandler(this, &MyForm::numericUpDown_add_cena_ValueChanged);
+			// 
 			// numericUpDown_add_cena
+			// 
 			this->numericUpDown_add_cena->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_add_cena->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
@@ -467,7 +532,9 @@ namespace Project11 {
 			this->numericUpDown_add_cena->TabIndex = 22;
 			this->numericUpDown_add_cena->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->numericUpDown_add_cena->Enter += gcnew System::EventHandler(this, &MyForm::numericUpDown_add_cena_ValueChanged);
+			// 
 			// label11
+			// 
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -477,7 +544,9 @@ namespace Project11 {
 			this->label11->Size = System::Drawing::Size(133, 20);
 			this->label11->TabIndex = 21;
 			this->label11->Text = L"Срок хранения";
+			// 
 			// label10
+			// 
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -487,7 +556,9 @@ namespace Project11 {
 			this->label10->Size = System::Drawing::Size(148, 20);
 			this->label10->TabIndex = 20;
 			this->label10->Text = L"Номер паспорта";
+			// 
 			// label4
+			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -497,7 +568,9 @@ namespace Project11 {
 			this->label4->Size = System::Drawing::Size(197, 20);
 			this->label4->TabIndex = 19;
 			this->label4->Text = L"Оценочная стоимость";
+			// 
 			// label9
+			// 
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -507,7 +580,9 @@ namespace Project11 {
 			this->label9->Size = System::Drawing::Size(165, 20);
 			this->label9->TabIndex = 18;
 			this->label9->Text = L"Состояние товара";
+			// 
 			// label2
+			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -517,7 +592,9 @@ namespace Project11 {
 			this->label2->Size = System::Drawing::Size(108, 20);
 			this->label2->TabIndex = 17;
 			this->label2->Text = L"Дата сдачи";
+			// 
 			// label1
+			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -527,7 +604,9 @@ namespace Project11 {
 			this->label1->Size = System::Drawing::Size(199, 20);
 			this->label1->TabIndex = 16;
 			this->label1->Text = L"Наименование товара";
+			// 
 			// numericUpDown_add_cond
+			// 
 			this->numericUpDown_add_cond->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->numericUpDown_add_cond->Location = System::Drawing::Point(21, 117);
@@ -537,9 +616,13 @@ namespace Project11 {
 			this->numericUpDown_add_cond->Size = System::Drawing::Size(292, 30);
 			this->numericUpDown_add_cond->TabIndex = 15;
 			this->numericUpDown_add_cond->Enter += gcnew System::EventHandler(this, &MyForm::numericUpDown_add_cond_ValueChanged);
+			// 
 			// openFileDialog1
+			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
+			// 
 			// button1
+			// 
 			this->button1->BackColor = System::Drawing::SystemColors::Control;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Location = System::Drawing::Point(1347, 635);
@@ -551,7 +634,9 @@ namespace Project11 {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Visible = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
 			// button_zapros
+			// 
 			this->button_zapros->BackColor = System::Drawing::SystemColors::Control;
 			this->button_zapros->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button_zapros->Location = System::Drawing::Point(1347, 703);
@@ -562,7 +647,9 @@ namespace Project11 {
 			this->button_zapros->Text = L"Запрос по данным";
 			this->button_zapros->UseVisualStyleBackColor = false;
 			this->button_zapros->Click += gcnew System::EventHandler(this, &MyForm::button_zapros_Click);
+			// 
 			// MyForm
+			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::PaleTurquoise;
@@ -576,6 +663,7 @@ namespace Project11 {
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->dataGridView1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->MaximizeBox = false;
@@ -586,7 +674,6 @@ namespace Project11 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
-			this->contextMenuStrip1->ResumeLayout(false);
 			this->groupBox_add->ResumeLayout(false);
 			this->groupBox_add->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_numstrok))->EndInit();
@@ -595,6 +682,7 @@ namespace Project11 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown_add_cond))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 		int redact = 0;
@@ -869,5 +957,10 @@ private: System::Void dataGridView1_DragEnter(System::Object^ sender, System::Wi
 			}}}
 	// Если файл имеет неправильное расширение или это не файл, запрещаем перетаскивание
 	e->Effect = DragDropEffects::None; }
+private: System::Void справкаToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	faq^ faq_form = gcnew faq();
+	faq_form->Show();
+	faq_form->TopMost = true;
+}
 };
 }

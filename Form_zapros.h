@@ -1,4 +1,5 @@
 ﻿#include "game.h"
+#include "faq.h"
 #pragma once
 namespace Project11 {
 	using namespace System;
@@ -85,7 +86,8 @@ namespace Project11 {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 	private: System::Windows::Forms::ToolStripMenuItem^ играToolStripMenuItem;
-	private: System::ComponentModel::Container ^components;
+	private: System::Windows::Forms::ToolStripMenuItem^ справкаToolStripMenuItem;
+	private: System::ComponentModel::Container^ components;
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void){
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
@@ -114,6 +116,8 @@ namespace Project11 {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->новыйЗапросToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->сменитьФонToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->играToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->справкаToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
@@ -160,7 +164,6 @@ namespace Project11 {
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
-			this->играToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->menuStrip1->SuspendLayout();
@@ -172,7 +175,9 @@ namespace Project11 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
+			// 
 			// dataGridView1
+			// 
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
@@ -200,7 +205,9 @@ namespace Project11 {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(1498, 329);
 			this->dataGridView1->TabIndex = 1;
+			// 
 			// Column_number
+			// 
 			this->Column_number->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->Column_number->HeaderText = L" №";
 			this->Column_number->MinimumWidth = 6;
@@ -208,49 +215,65 @@ namespace Project11 {
 			this->Column_number->ReadOnly = true;
 			this->Column_number->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 			this->Column_number->Width = 70;
+			// 
 			// Column_name
+			// 
 			this->Column_name->FillWeight = 55.89743F;
 			this->Column_name->HeaderText = L" Наименование товара";
 			this->Column_name->MinimumWidth = 6;
 			this->Column_name->Name = L"Column_name";
 			this->Column_name->ReadOnly = true;
+			// 
 			// Column_cond
+			// 
 			this->Column_cond->FillWeight = 20;
 			this->Column_cond->HeaderText = L"Состояние товара";
 			this->Column_cond->MinimumWidth = 6;
 			this->Column_cond->Name = L"Column_cond";
 			this->Column_cond->ReadOnly = true;
+			// 
 			// Column_cost
+			// 
 			this->Column_cost->FillWeight = 35.89743F;
 			this->Column_cost->HeaderText = L"Оценочная стоимость";
 			this->Column_cost->MinimumWidth = 6;
 			this->Column_cost->Name = L"Column_cost";
 			this->Column_cost->ReadOnly = true;
+			// 
 			// Column_valut
+			// 
 			this->Column_valut->FillWeight = 15.89743F;
 			this->Column_valut->HeaderText = L"Валюта";
 			this->Column_valut->MinimumWidth = 6;
 			this->Column_valut->Name = L"Column_valut";
 			this->Column_valut->ReadOnly = true;
+			// 
 			// Column_date
+			// 
 			this->Column_date->FillWeight = 20.89743F;
 			this->Column_date->HeaderText = L"Дата сдачи";
 			this->Column_date->MinimumWidth = 6;
 			this->Column_date->Name = L"Column_date";
 			this->Column_date->ReadOnly = true;
+			// 
 			// Column_passport
+			// 
 			this->Column_passport->FillWeight = 25.89743F;
 			this->Column_passport->HeaderText = L"Паспортные данные";
 			this->Column_passport->MinimumWidth = 6;
 			this->Column_passport->Name = L"Column_passport";
 			this->Column_passport->ReadOnly = true;
+			// 
 			// Column_days
+			// 
 			this->Column_days->FillWeight = 15.89743F;
 			this->Column_days->HeaderText = L"Срок хранения";
 			this->Column_days->MinimumWidth = 6;
 			this->Column_days->Name = L"Column_days";
 			this->Column_days->ReadOnly = true;
+			// 
 			// dataGridView2
+			// 
 			this->dataGridView2->AllowUserToAddRows = false;
 			this->dataGridView2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -278,7 +301,9 @@ namespace Project11 {
 			this->dataGridView2->RowTemplate->Height = 24;
 			this->dataGridView2->Size = System::Drawing::Size(1498, 351);
 			this->dataGridView2->TabIndex = 2;
+			// 
 			// dataGridViewTextBoxColumn1
+			// 
 			this->dataGridViewTextBoxColumn1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->dataGridViewTextBoxColumn1->HeaderText = L" №";
 			this->dataGridViewTextBoxColumn1->MinimumWidth = 6;
@@ -286,49 +311,65 @@ namespace Project11 {
 			this->dataGridViewTextBoxColumn1->ReadOnly = true;
 			this->dataGridViewTextBoxColumn1->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridViewTextBoxColumn1->Width = 70;
+			// 
 			// dataGridViewTextBoxColumn2
+			// 
 			this->dataGridViewTextBoxColumn2->FillWeight = 55.89743F;
 			this->dataGridViewTextBoxColumn2->HeaderText = L" Наименование товара";
 			this->dataGridViewTextBoxColumn2->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
 			this->dataGridViewTextBoxColumn2->ReadOnly = true;
+			// 
 			// dataGridViewTextBoxColumn3
+			// 
 			this->dataGridViewTextBoxColumn3->FillWeight = 20;
 			this->dataGridViewTextBoxColumn3->HeaderText = L"Состояние товара";
 			this->dataGridViewTextBoxColumn3->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
 			this->dataGridViewTextBoxColumn3->ReadOnly = true;
+			// 
 			// dataGridViewTextBoxColumn4
+			// 
 			this->dataGridViewTextBoxColumn4->FillWeight = 35.89743F;
 			this->dataGridViewTextBoxColumn4->HeaderText = L"Оценочная стоимость";
 			this->dataGridViewTextBoxColumn4->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
 			this->dataGridViewTextBoxColumn4->ReadOnly = true;
+			// 
 			// dataGridViewTextBoxColumn5
+			// 
 			this->dataGridViewTextBoxColumn5->FillWeight = 15.89743F;
 			this->dataGridViewTextBoxColumn5->HeaderText = L"Валюта";
 			this->dataGridViewTextBoxColumn5->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
 			this->dataGridViewTextBoxColumn5->ReadOnly = true;
+			// 
 			// dataGridViewTextBoxColumn6
+			// 
 			this->dataGridViewTextBoxColumn6->FillWeight = 20.89743F;
 			this->dataGridViewTextBoxColumn6->HeaderText = L"Дата сдачи";
 			this->dataGridViewTextBoxColumn6->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
 			this->dataGridViewTextBoxColumn6->ReadOnly = true;
+			// 
 			// dataGridViewTextBoxColumn7
+			// 
 			this->dataGridViewTextBoxColumn7->FillWeight = 25.89743F;
 			this->dataGridViewTextBoxColumn7->HeaderText = L"Паспортные данные";
 			this->dataGridViewTextBoxColumn7->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn7->Name = L"dataGridViewTextBoxColumn7";
 			this->dataGridViewTextBoxColumn7->ReadOnly = true;
+			// 
 			// dataGridViewTextBoxColumn8
+			// 
 			this->dataGridViewTextBoxColumn8->FillWeight = 15.89743F;
 			this->dataGridViewTextBoxColumn8->HeaderText = L"Срок хранения";
 			this->dataGridViewTextBoxColumn8->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
 			this->dataGridViewTextBoxColumn8->ReadOnly = true;
+			// 
 			// label1
+			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -337,7 +378,9 @@ namespace Project11 {
 			this->label1->Size = System::Drawing::Size(153, 20);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Основной список";
+			// 
 			// label2
+			// 
 			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -347,31 +390,57 @@ namespace Project11 {
 			this->label2->Size = System::Drawing::Size(211, 20);
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"Запрашиваемый список";
+			// 
 			// menuStrip1
+			// 
 			this->menuStrip1->BackColor = System::Drawing::Color::Honeydew;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->новыйЗапросToolStripMenuItem,
-					this->сменитьФонToolStripMenuItem, this->играToolStripMenuItem
+					this->сменитьФонToolStripMenuItem, this->играToolStripMenuItem, this->справкаToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(1579, 28);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
+			// 
 			// новыйЗапросToolStripMenuItem
+			// 
 			this->новыйЗапросToolStripMenuItem->Name = L"новыйЗапросToolStripMenuItem";
 			this->новыйЗапросToolStripMenuItem->Size = System::Drawing::Size(201, 24);
 			this->новыйЗапросToolStripMenuItem->Text = L"Сохранить запрос в файл";
 			this->новыйЗапросToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::новыйЗапросToolStripMenuItem_Click);
+			// 
 			// сменитьФонToolStripMenuItem
+			// 
 			this->сменитьФонToolStripMenuItem->Name = L"сменитьФонToolStripMenuItem";
 			this->сменитьФонToolStripMenuItem->Size = System::Drawing::Size(115, 24);
 			this->сменитьФонToolStripMenuItem->Text = L"Сменить фон";
 			this->сменитьФонToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::сменитьФонToolStripMenuItem_Click);
+			// 
+			// играToolStripMenuItem
+			// 
+			this->играToolStripMenuItem->Name = L"играToolStripMenuItem";
+			this->играToolStripMenuItem->Size = System::Drawing::Size(57, 24);
+			this->играToolStripMenuItem->Text = L"Игра";
+			this->играToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::играToolStripMenuItem_Click);
+			// 
+			// справкаToolStripMenuItem
+			// 
+			this->справкаToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"справкаToolStripMenuItem.Image")));
+			this->справкаToolStripMenuItem->Name = L"справкаToolStripMenuItem";
+			this->справкаToolStripMenuItem->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->справкаToolStripMenuItem->Size = System::Drawing::Size(101, 24);
+			this->справкаToolStripMenuItem->Text = L"Справка";
+			this->справкаToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::справкаToolStripMenuItem_Click);
+			// 
 			// openFileDialog1
+			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
+			// 
 			// groupBox1
+			// 
 			this->groupBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -424,7 +493,9 @@ namespace Project11 {
 			this->groupBox1->TabIndex = 6;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Меню фильтров";
+			// 
 			// numericUpDown3
+			// 
 			this->numericUpDown3->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->numericUpDown3->Location = System::Drawing::Point(575, 86);
 			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250000, 0, 0, 0 });
@@ -432,7 +503,9 @@ namespace Project11 {
 			this->numericUpDown3->Size = System::Drawing::Size(121, 22);
 			this->numericUpDown3->TabIndex = 48;
 			this->numericUpDown3->Visible = false;
+			// 
 			// domainUpDown3
+			// 
 			this->domainUpDown3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->domainUpDown3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -448,7 +521,9 @@ namespace Project11 {
 			this->domainUpDown3->TabIndex = 47;
 			this->domainUpDown3->Text = L"₽";
 			this->domainUpDown3->Visible = false;
+			// 
 			// label12
+			// 
 			this->label12->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label12->AutoSize = true;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -459,7 +534,9 @@ namespace Project11 {
 			this->label12->TabIndex = 45;
 			this->label12->Text = L"Номер\nпаспорта";
 			this->label12->Visible = false;
-			// checkBox_srok 
+			// 
+			// checkBox_srok
+			// 
 			this->checkBox_srok->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->checkBox_srok->AutoSize = true;
 			this->checkBox_srok->Location = System::Drawing::Point(1289, 14);
@@ -470,7 +547,9 @@ namespace Project11 {
 			this->checkBox_srok->Text = L"Срок\nхранения";
 			this->checkBox_srok->UseVisualStyleBackColor = true;
 			this->checkBox_srok->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_srok_CheckedChanged);
+			// 
 			// checkBox_passport
+			// 
 			this->checkBox_passport->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->checkBox_passport->AutoSize = true;
 			this->checkBox_passport->Location = System::Drawing::Point(1120, 14);
@@ -481,7 +560,9 @@ namespace Project11 {
 			this->checkBox_passport->Text = L"Паспортные\nданные";
 			this->checkBox_passport->UseVisualStyleBackColor = true;
 			this->checkBox_passport->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_passport_CheckedChanged);
+			// 
 			// checkBox_date
+			// 
 			this->checkBox_date->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->checkBox_date->AutoSize = true;
 			this->checkBox_date->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -494,7 +575,9 @@ namespace Project11 {
 			this->checkBox_date->Text = L"Дата\nсдачи";
 			this->checkBox_date->UseVisualStyleBackColor = true;
 			this->checkBox_date->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_date_CheckedChanged);
+			// 
 			// checkBox_cena
+			// 
 			this->checkBox_cena->AutoSize = true;
 			this->checkBox_cena->Location = System::Drawing::Point(575, 14);
 			this->checkBox_cena->Name = L"checkBox_cena";
@@ -504,7 +587,9 @@ namespace Project11 {
 			this->checkBox_cena->Text = L"Оценочная\nстоимость";
 			this->checkBox_cena->UseVisualStyleBackColor = true;
 			this->checkBox_cena->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_cena_CheckedChanged);
+			// 
 			// checkBox_con
+			// 
 			this->checkBox_con->AutoSize = true;
 			this->checkBox_con->Location = System::Drawing::Point(402, 14);
 			this->checkBox_con->Name = L"checkBox_con";
@@ -514,7 +599,9 @@ namespace Project11 {
 			this->checkBox_con->Text = L"Состояние\nтовара";
 			this->checkBox_con->UseVisualStyleBackColor = true;
 			this->checkBox_con->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_con_CheckedChanged);
+			// 
 			// checkBox_valuta
+			// 
 			this->checkBox_valuta->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->checkBox_valuta->AutoSize = true;
 			this->checkBox_valuta->Location = System::Drawing::Point(768, 22);
@@ -525,7 +612,9 @@ namespace Project11 {
 			this->checkBox_valuta->Text = L"Валюта";
 			this->checkBox_valuta->UseVisualStyleBackColor = true;
 			this->checkBox_valuta->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_valuta_CheckedChanged);
+			// 
 			// checkBox_number
+			// 
 			this->checkBox_number->AutoSize = true;
 			this->checkBox_number->Location = System::Drawing::Point(16, 21);
 			this->checkBox_number->Name = L"checkBox_number";
@@ -535,7 +624,9 @@ namespace Project11 {
 			this->checkBox_number->Text = L"Номер";
 			this->checkBox_number->UseVisualStyleBackColor = true;
 			this->checkBox_number->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_number_CheckedChanged);
+			// 
 			// checkBox_name
+			// 
 			this->checkBox_name->AutoSize = true;
 			this->checkBox_name->Location = System::Drawing::Point(166, 22);
 			this->checkBox_name->Name = L"checkBox_name";
@@ -545,7 +636,9 @@ namespace Project11 {
 			this->checkBox_name->Text = L"Наименование";
 			this->checkBox_name->UseVisualStyleBackColor = true;
 			this->checkBox_name->CheckedChanged += gcnew System::EventHandler(this, &Form_zapros::checkBox_name_CheckedChanged);
+			// 
 			// button_exit_zapros
+			// 
 			this->button_exit_zapros->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->button_exit_zapros->BackColor = System::Drawing::Color::LightGreen;
@@ -558,7 +651,9 @@ namespace Project11 {
 			this->button_exit_zapros->Text = L"Выйти";
 			this->button_exit_zapros->UseVisualStyleBackColor = false;
 			this->button_exit_zapros->Click += gcnew System::EventHandler(this, &Form_zapros::button_exit_zapros_Click);
+			// 
 			// button_clear
+			// 
 			this->button_clear->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->button_clear->BackColor = System::Drawing::Color::LightGreen;
@@ -571,7 +666,9 @@ namespace Project11 {
 			this->button_clear->Text = L"Очистить фильтры";
 			this->button_clear->UseVisualStyleBackColor = false;
 			this->button_clear->Click += gcnew System::EventHandler(this, &Form_zapros::button_clear_Click);
+			// 
 			// button_zapros
+			// 
 			this->button_zapros->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->button_zapros->BackColor = System::Drawing::Color::LightGreen;
@@ -584,60 +681,77 @@ namespace Project11 {
 			this->button_zapros->Text = L"Запрос";
 			this->button_zapros->UseVisualStyleBackColor = false;
 			this->button_zapros->Click += gcnew System::EventHandler(this, &Form_zapros::button_zapros_Click);
+			// 
 			// panel3
+			// 
 			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel3->Location = System::Drawing::Point(147, 22);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(2, 120);
 			this->panel3->TabIndex = 32;
-			
+			// 
 			// panel2
+			// 
 			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel2->Location = System::Drawing::Point(387, 22);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(2, 120);
 			this->panel2->TabIndex = 32;
+			// 
 			// panel7
+			// 
 			this->panel7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->panel7->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel7->Location = System::Drawing::Point(1268, 22);
 			this->panel7->Name = L"panel7";
 			this->panel7->Size = System::Drawing::Size(2, 120);
 			this->panel7->TabIndex = 32;
+			// 
 			// panel6
+			// 
 			this->panel6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->panel6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel6->Location = System::Drawing::Point(1100, 21);
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(2, 120);
 			this->panel6->TabIndex = 32;
+			// 
 			// panel9
+			// 
 			this->panel9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->panel9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel9->Location = System::Drawing::Point(858, 22);
 			this->panel9->Name = L"panel9";
 			this->panel9->Size = System::Drawing::Size(2, 120);
 			this->panel9->TabIndex = 32;
+			// 
 			// panel8
+			// 
 			this->panel8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->panel8->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel8->Location = System::Drawing::Point(757, 22);
 			this->panel8->Name = L"panel8";
 			this->panel8->Size = System::Drawing::Size(2, 120);
 			this->panel8->TabIndex = 32;
+			// 
 			// panel4
+			// 
 			this->panel4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel4->Location = System::Drawing::Point(757, 22);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(2, 120);
 			this->panel4->TabIndex = 32;
+			// 
 			// panel1
+			// 
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel1->Location = System::Drawing::Point(557, 21);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(2, 120);
 			this->panel1->TabIndex = 32;
+			// 
 			// numericUpDown6
+			// 
 			this->numericUpDown6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->numericUpDown6->Location = System::Drawing::Point(1289, 117);
 			this->numericUpDown6->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 390, 0, 0, 0 });
@@ -647,7 +761,9 @@ namespace Project11 {
 			this->numericUpDown6->TabIndex = 31;
 			this->numericUpDown6->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown6->Visible = false;
+			// 
 			// numericUpDown5
+			// 
 			this->numericUpDown5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->numericUpDown5->Location = System::Drawing::Point(1289, 71);
 			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 390, 0, 0, 0 });
@@ -658,7 +774,9 @@ namespace Project11 {
 			this->numericUpDown5->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown5->Visible = false;
 			this->numericUpDown5->ValueChanged += gcnew System::EventHandler(this, &Form_zapros::numericUpDown5_ValueChanged);
+			// 
 			// label11
+			// 
 			this->label11->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -669,7 +787,9 @@ namespace Project11 {
 			this->label11->TabIndex = 29;
 			this->label11->Text = L"До";
 			this->label11->Visible = false;
+			// 
 			// label10
+			// 
 			this->label10->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -680,7 +800,9 @@ namespace Project11 {
 			this->label10->TabIndex = 28;
 			this->label10->Text = L"От";
 			this->label10->Visible = false;
+			// 
 			// maskedTextBox1
+			// 
 			this->maskedTextBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->maskedTextBox1->Location = System::Drawing::Point(1120, 117);
 			this->maskedTextBox1->Mask = L"000000";
@@ -688,7 +810,9 @@ namespace Project11 {
 			this->maskedTextBox1->Size = System::Drawing::Size(109, 22);
 			this->maskedTextBox1->TabIndex = 26;
 			this->maskedTextBox1->Visible = false;
+			// 
 			// label9
+			// 
 			this->label9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -699,7 +823,9 @@ namespace Project11 {
 			this->label9->TabIndex = 25;
 			this->label9->Text = L"До";
 			this->label9->Visible = false;
+			// 
 			// label7
+			// 
 			this->label7->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
@@ -710,21 +836,27 @@ namespace Project11 {
 			this->label7->TabIndex = 24;
 			this->label7->Text = L"От";
 			this->label7->Visible = false;
+			// 
 			// dateTimePicker2
+			// 
 			this->dateTimePicker2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->dateTimePicker2->Location = System::Drawing::Point(869, 117);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
 			this->dateTimePicker2->Size = System::Drawing::Size(200, 22);
 			this->dateTimePicker2->TabIndex = 23;
 			this->dateTimePicker2->Visible = false;
+			// 
 			// dateTimePicker1
+			// 
 			this->dateTimePicker1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->dateTimePicker1->Location = System::Drawing::Point(869, 70);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(200, 22);
 			this->dateTimePicker1->TabIndex = 22;
 			this->dateTimePicker1->Visible = false;
+			// 
 			// domainUpDown2
+			// 
 			this->domainUpDown2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->domainUpDown2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -739,7 +871,9 @@ namespace Project11 {
 			this->domainUpDown2->Text = L"Промежуток";
 			this->domainUpDown2->Visible = false;
 			this->domainUpDown2->SelectedItemChanged += gcnew System::EventHandler(this, &Form_zapros::domainUpDown2_SelectedItemChanged);
+			// 
 			// label8
+			// 
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -749,7 +883,9 @@ namespace Project11 {
 			this->label8->TabIndex = 18;
 			this->label8->Text = L"Сумма ";
 			this->label8->Visible = false;
+			// 
 			// domainUpDown1
+			// 
 			this->domainUpDown1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->domainUpDown1->Items->Add(L"=");
@@ -761,14 +897,18 @@ namespace Project11 {
 			this->domainUpDown1->TabIndex = 16;
 			this->domainUpDown1->Text = L"=";
 			this->domainUpDown1->Visible = false;
+			// 
 			// numericUpDown7
+			// 
 			this->numericUpDown7->Location = System::Drawing::Point(402, 87);
 			this->numericUpDown7->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
 			this->numericUpDown7->Name = L"numericUpDown7";
 			this->numericUpDown7->Size = System::Drawing::Size(120, 22);
 			this->numericUpDown7->TabIndex = 14;
 			this->numericUpDown7->Visible = false;
+			// 
 			// label6
+			// 
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -778,7 +918,9 @@ namespace Project11 {
 			this->label6->TabIndex = 15;
 			this->label6->Text = L"Состояние";
 			this->label6->Visible = false;
+			// 
 			// label5
+			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -788,13 +930,17 @@ namespace Project11 {
 			this->label5->TabIndex = 13;
 			this->label5->Text = L"Наименование";
 			this->label5->Visible = false;
+			// 
 			// textBox1
+			// 
 			this->textBox1->Location = System::Drawing::Point(166, 86);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(207, 22);
 			this->textBox1->TabIndex = 12;
 			this->textBox1->Visible = false;
+			// 
 			// label4
+			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -804,7 +950,9 @@ namespace Project11 {
 			this->label4->TabIndex = 11;
 			this->label4->Text = L"До";
 			this->label4->Visible = false;
+			// 
 			// label3
+			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
@@ -814,7 +962,9 @@ namespace Project11 {
 			this->label3->TabIndex = 10;
 			this->label3->Text = L"От";
 			this->label3->Visible = false;
+			// 
 			// numericUpDown2
+			// 
 			this->numericUpDown2->Location = System::Drawing::Point(16, 108);
 			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
@@ -822,7 +972,9 @@ namespace Project11 {
 			this->numericUpDown2->TabIndex = 9;
 			this->numericUpDown2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown2->Visible = false;
+			// 
 			// numericUpDown1
+			// 
 			this->numericUpDown1->Location = System::Drawing::Point(16, 64);
 			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
@@ -831,12 +983,9 @@ namespace Project11 {
 			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown1->Visible = false;
 			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &Form_zapros::numericUpDown1_ValueChanged);
-			// играToolStripMenuItem
-			this->играToolStripMenuItem->Name = L"играToolStripMenuItem";
-			this->играToolStripMenuItem->Size = System::Drawing::Size(57, 24);
-			this->играToolStripMenuItem->Text = L"Игра";
-			this->играToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form_zapros::играToolStripMenuItem_Click);
+			// 
 			// Form_zapros
+			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
@@ -847,6 +996,7 @@ namespace Project11 {
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Form_zapros";
 			this->Text = L"Функция запроса по данным";
@@ -867,6 +1017,7 @@ namespace Project11 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
 		}
 #pragma endregion
 	private: System::Void Form_zapros_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -1186,6 +1337,11 @@ private: System::Void играToolStripMenuItem_Click(System::Object^ sender, Sy
 	game^ form_game = gcnew game();
 	form_game->Show();
 	form_game->TopMost = true;
+}
+private: System::Void справкаToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	faq^ faq_form = gcnew faq();
+	faq_form->Show();
+	faq_form->TopMost = true;
 }
 };
 }
